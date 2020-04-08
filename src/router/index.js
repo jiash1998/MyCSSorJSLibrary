@@ -2,16 +2,19 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 //伪类按钮
 import main from "../views/main";
-import btnEffects from "../views/effect/btnEffects";
 
-import conventionLayout from "../views/conventionLayout";
-import positionTest from "../views/positionTest";
-import heightTest from "../views/heightTest";
-import btnSocialShare from "../views/btnSocialShare";
-import mediaTest from "../views/mediaTest";
-import sortFun from "../views/sortFun";
-import searchInput from "../views/searchInput";
 
+//CSS
+import btnEffects from "../views/CSSEffects/btnEffects";
+import conventionLayout from "../views/CSSEffects/conventionLayout";
+import positionTest from "../views/CSSEffects/positionTest";
+import heightTest from "../views/CSSEffects/heightTest";
+import btnSocialShare from "../views/CSSEffects/btnSocialShare";
+import mediaTest from "../views/CSSEffects/mediaTest";
+import searchInput from "../views/CSSEffects/searchInput";
+
+//JS
+import sortFun from "../views/JSFun/sortFun";
 
 Vue.use(VueRouter);
 
@@ -24,19 +27,12 @@ const routes = [
     path: "/main",
     name: "main",
     component: main,
-    children: [
-      {
-        path: "/main/btnEffects",
-        name: "btnEffects",
-        component: btnEffects,
-      },
-    ],
   },
-  // {
-  //   path: "/btnEffects",
-  //   name: "btnEffects",
-  //   component: btnEffects
-  // },
+  {
+    path: "/btnEffects",
+    name: "btnEffects",
+    component: btnEffects
+  },
   {
     path: "/positionTest",
     name: "positionTest",

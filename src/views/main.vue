@@ -1,43 +1,33 @@
 <template>
   <div id="main1">
     <div class="body">
-      <div class="tabber"></div>
+      <div class="tabber">
+        <h2>My CSS/JS Library</h2>
+      </div>
       <div class="con">
         <div class="left">
-          <h2 contenteditable="true">主页1</h2>
+          <p>JS</p>
           <button @click="test1(vm)">函数防抖{{num1}}</button>
           <button @click="test2(vm)">函数节流{{num2}}</button>
           <button @click="settime">定时器返回值</button>
-          <!-- <input type="text" v-model="value" @keydown="hangleChange" /> -->
-          <router-link to="/main/btnEffects" tag="button">伪类按钮</router-link>
+          <router-link to="/sortFun" tag="button">排序算法</router-link>
+          <!-- <br />
+          <a href="#">登录</a>
+          <a href="#">注册</a>
+          <br /> -->
+        </div>
+        <div class="right">
+          <p>CSS</p>
+          <!-- <i class="icon_menu"></i> -->
+          <router-link to="/btnEffects" tag="button">伪类按钮</router-link>
           <router-link to="/btnSocialShare" tag="button">设计分享按钮</router-link>
           <router-link to="/positionTest" tag="button">定位练习</router-link>
           <router-link to="/conventionLayout" tag="button">常规布局</router-link>
           <router-link to="/heightTest" tag="button">高度自适应</router-link>
           <router-link to="/mediaTest" tag="button">媒体查询</router-link>
-          <router-link to="/sortFun" tag="button">排序算法</router-link>
-          <router-link to="/searchInput" tag="button">搜索框</router-link>
-          <br />
-          <a href="#">登录</a>
-          <a href="#">注册</a>
-          <br />
-          <i class="icon_menu"></i>
-        </div>
-        <div class="right">
-          <router-view />
-          <h1>123123</h1>
-          <h1>123123</h1>
-          <h1>123123</h1>
-          <h1>123123</h1>
-          <h1>123123</h1>
-          <h1>123123</h1>
-          <h1>123123</h1>
-          <h1>123123</h1>
-          <h1>123123</h1>
-          <i class="icon_menu"></i>
+          <router-link to="/searchInput" tag="button">悬浮搜索框</router-link>
         </div>
       </div>
-      <!-- <div class="footer"></div> -->
     </div>
   </div>
 </template>

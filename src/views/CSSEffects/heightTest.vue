@@ -17,5 +17,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "../assets/css/heightTest.scss";
+@import "../../assets/css/heightTest.scss";
 </style>

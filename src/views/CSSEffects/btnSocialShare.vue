@@ -31,5 +31,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "../assets/css/btnSocialShare.scss";
+@import "../../assets/css/btnSocialShare.scss";
 </style>

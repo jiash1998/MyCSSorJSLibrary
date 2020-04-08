@@ -3,7 +3,7 @@
     <div class="body">
       <div class="header">
         <div class="btn" @click="btnClick">
-          <img src="../assets/img/menu2.png" />
+          <img src="../../assets/img/menu2.png" />
         </div>
         <ul :class="isShow == true ? 'show' : ''">
           <li v-for="(item,index) in list" :key="index" @click="test(index)">{{item.content}}</li>
@@ -54,6 +54,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "../assets/css/app.scss";
-@import "../assets/css/mediaTest.scss";
+@import "../../assets/css/app.scss";
+@import "../../assets/css/mediaTest.scss";
 </style>
