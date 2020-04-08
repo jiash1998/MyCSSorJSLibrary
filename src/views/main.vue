@@ -35,8 +35,8 @@
 <script>
 //地理分析图像库
 import * as turf from "@turf/turf";
-import { debounce } from "../debounce.js";
-import { throttle } from "../throttle.js";
+import { debounce } from "../JsUtil/debounce";
+import { throttle } from "../JsUtil/throttle.js";
 export default {
   name: "main1",
   data() {

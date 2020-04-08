@@ -8,9 +8,9 @@
 </template>
 
 <script>
-import bubbleFun from "../../sortFun.js";
-import selectFun from "../../sortFun.js";
-import insertFun from "../../sortFun.js";
+import bubbleFun from "../../JsUtil/sortFun.js";
+import selectFun from "../../JsUtil/sortFun.js";
+import insertFun from "../../JsUtil/sortFun.js";
 
 export default {
   name: "sortFun",
