@@ -1,0 +1,46 @@
+body {
+  width: 100%;
+  margin: 0;
+  height: 100%;
+
+  .header {
+    position: fixed;
+    top: 0;
+    height: 80px;
+    width: 100%;
+    background-color: gray;
+  }
+
+  .main {
+    // margin-top: 80px;
+    // height: calc(100% - 80px);
+    .sidebar {
+      position: fixed;
+      top: 80px;
+      left: 0;
+      bottom: 0;
+      width: 300px;
+      background-color: yellow;
+    }
+
+    .content {
+      position: fixed;
+      width: 100%;
+      top: 80px;
+      left: 300px;
+      bottom: 0;
+      overflow-y: auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-content: space-around;
+      justify-content: space-evenly;
+    //   background-color: green;
+
+      .div1 {
+        height: 200px;
+        width: 400px;
+        background-color: pink;
+      }
+    }
+  }
+}

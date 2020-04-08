@@ -1,0 +1,45 @@
+#searchInput {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  .search-div {
+    width: 350px;
+    height: 45px;
+    border: 2px solid gray;
+    transition: 0.4s;
+    box-sizing: border-box;
+
+    & > * {
+      border: none;
+    }
+
+    &:hover {
+      box-shadow: 0 5px 5px gainsboro;
+      border: 2px solid #1e90ff;
+      transform: translateY(-4px);
+
+      .search-btn {
+        opacity: 1;
+      }
+    }
+
+    .search-input {
+      height: 40px;
+      width: 260px;
+      margin-left: 10px;
+      border: 0px solid red;
+    }
+
+    .search-btn {
+      width: calc(100% - 280px);
+      height: 30px;
+      color: #fff;
+      background-color: #1e90ff;
+      opacity: 0;
+      margin-left: 5px;
+      transition: 0.4s;
+    }
+  }
+}
