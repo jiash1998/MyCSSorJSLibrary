@@ -15,6 +15,8 @@ import searchInput from "../views/CSSEffects/searchInput";
 
 //JS
 import sortFun from "../views/JSFun/sortFun";
+import echartsTest from "../views/JSFun/echartsTest";
+
 
 Vue.use(VueRouter);
 
@@ -31,7 +33,7 @@ const routes = [
   {
     path: "/btnEffects",
     name: "btnEffects",
-    component: btnEffects
+    component: btnEffects,
   },
   {
     path: "/positionTest",
@@ -67,6 +69,11 @@ const routes = [
     path: "/searchInput",
     name: "searchInput",
     component: searchInput,
+  },
+  {
+    path: "/echartsTest",
+    name: "echartsTest",
+    component: echartsTest,
   },
 ];
 
