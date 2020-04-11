@@ -13,6 +13,7 @@
           <router-link to="/sortFun" tag="button">排序算法</router-link>
           <button @click="NodeApiTest">NodeJs接口测试</button>
           <router-link to="/echartsTest" tag="button">Echarts饼图测试</router-link>
+          <router-link to="/excalopr" tag="button">表格操作</router-link>
           <!-- <br />
           <a href="#">登录</a>
           <a href="#">注册</a>
