@@ -5,8 +5,8 @@ import store from './store'
 import axios from "axios"; //axios
 import VueAxios from "vue-axios"; //axios
 //引入excal操作
-import Blob from '../src/JsUtil/excalOpr/Blob';
-import Export2Excel from "../src/JsUtil/excalOpr/Export2Excel";
+// import Blob from '../src/JsUtil/excalOpr/Blob';
+// import Export2Excel from "../src/JsUtil/excalOpr/Export2Excel";
 
 //引入基本模板
 let echarts = require('echarts/lib/echarts');

@@ -48,7 +48,8 @@ export default {
       value: "",
       vm: this,
       num1: 0,
-      num2: 0
+      num2: 0,
+      index: 0
     };
   },
   mounted() {
@@ -71,7 +72,57 @@ export default {
     // console.log(center);
     // this.get();
   },
+  created() {
+    // console.log("结果为：" + this.zy(3));
+    // console.log("结果为：" + this.zy2(10));
+    // console.log("结果为：" + this.zy3(3, 30));
+    // console.log("结果为：" + this.hanoi(3, "src", "aux", "dst"));
+    this.zy5(10, 2);
+  },
   methods: {
+    //进制转换
+    zy5(m, n) {
+      console.log("输入数字和指定进制为：" + m + " " + n);
+      console.log("结果为：" + m.toString(n));
+    },
+    //汉诺塔
+    hanoi(disc, src, aux, dst) {
+      // var index = 0;
+      if (disc > 0) {
+        this.hanoi(disc - 1, src, dst, aux);
+        // console.log("Move disc " + disc + " from " + src + " to " + dst);
+        this.index += 1;
+        this.hanoi(disc - 1, aux, src, dst);
+      }
+      return this.index;
+    },
+    //zy3
+    zy3(m, n) {
+      var u = +m,
+        v = +n,
+        t;
+      while (v != 0) {
+        t = u % v;
+        u = v;
+        v = t;
+      }
+      return u;
+    },
+    //作业1
+    zy(n) {
+      if (n <= 1) {
+        return 1;
+      }
+      return n * this.zy(n - 1);
+    },
+    //2
+    zy2(n, ac1 = 1, ac2 = 1) {
+      if (n <= 1) {
+        return ac2;
+      }
+      return this.zy2(n - 1, ac2, ac1 + ac2);
+    },
+
     test1: debounce(
       vm => {
         vm.num1++;
