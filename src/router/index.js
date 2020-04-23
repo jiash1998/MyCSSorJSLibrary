@@ -16,69 +16,76 @@ import searchInput from "../views/CSSEffects/searchInput";
 import sortFun from "../views/JSFun/sortFun";
 import echartsTest from "../views/JSFun/echartsTest";
 import excalopr from "../views/JSFun/excalopr";
+import NodeApi from "../views/JSFun/NodeApi";
+
 
 Vue.use(VueRouter);
 
 const routes = [
   {
     path: "",
-    redirect: "/main"
+    redirect: "/main",
   },
   {
     path: "/main",
     name: "main",
-    component: main
+    component: main,
   },
   {
     path: "/btnEffects",
     name: "btnEffects",
-    component: btnEffects
+    component: btnEffects,
   },
   {
     path: "/positionTest",
     name: "positionTest",
-    component: positionTest
+    component: positionTest,
   },
   {
     path: "/heightTest",
     name: "heightTest",
-    component: heightTest
+    component: heightTest,
   },
   {
     path: "/btnSocialShare",
     name: "btnSocialShare",
-    component: btnSocialShare
+    component: btnSocialShare,
   },
   {
     path: "/conventionLayout",
     name: "conventionLayout",
-    component: conventionLayout
+    component: conventionLayout,
   },
   {
     path: "/mediaTest",
     name: "mediaTest",
-    component: mediaTest
+    component: mediaTest,
   },
   {
     path: "/sortFun",
     name: "sortFun",
-    component: sortFun
+    component: sortFun,
   },
   {
     path: "/searchInput",
     name: "searchInput",
-    component: searchInput
+    component: searchInput,
   },
   {
     path: "/echartsTest",
     name: "echartsTest",
-    component: echartsTest
+    component: echartsTest,
   },
   {
     path: "/excalopr",
     name: "excalopr",
-    component: excalopr
-  }
+    component: excalopr,
+  },
+  {
+    path: "/NodeApi",
+    name: "NodeApi",
+    component: NodeApi,
+  },
 ];
 
 const router = new VueRouter({

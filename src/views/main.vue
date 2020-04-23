@@ -11,7 +11,7 @@
           <button @click="test2(vm)">函数节流{{num2}}</button>
           <button @click="settime">定时器返回值</button>
           <router-link to="/sortFun" tag="button">排序算法</router-link>
-          <button @click="NodeApiTest">NodeJs接口测试</button>
+           <router-link to="/NodeApi" tag="button">node接口测试</router-link>
           <router-link to="/echartsTest" tag="button">Echarts饼图测试</router-link>
           <router-link to="/excalopr" tag="button">表格操作</router-link>
           <!-- <br />
@@ -38,6 +38,7 @@
 <script>
 //地理分析图像库
 import axios from "axios"; //axios
+import qs from "querystring";
 import * as turf from "@turf/turf";
 import { debounce } from "../JsUtil/debounce";
 import { throttle } from "../JsUtil/throttle.js";
@@ -103,12 +104,6 @@ export default {
       }, 1000);
       //定时器返回值或许是随机的
       console.log(this.settime);
-    },
-    //node接口测试
-    NodeApiTest() {
-      axios.get("/test/getmodel").then(res => {
-        console.log(res);
-      });
     }
   }
 };
