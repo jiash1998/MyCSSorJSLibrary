@@ -17,7 +17,7 @@ import sortFun from "../views/JSFun/sortFun";
 import echartsTest from "../views/JSFun/echartsTest";
 import excalopr from "../views/JSFun/excalopr";
 import NodeApi from "../views/JSFun/NodeApi";
-
+import deepClone from "../views/JSFun/deepClone";
 
 Vue.use(VueRouter);
 
@@ -31,6 +31,7 @@ const routes = [
     name: "main",
     component: main,
   },
+  //CSS
   {
     path: "/btnEffects",
     name: "btnEffects",
@@ -62,15 +63,11 @@ const routes = [
     component: mediaTest,
   },
   {
-    path: "/sortFun",
-    name: "sortFun",
-    component: sortFun,
-  },
-  {
     path: "/searchInput",
     name: "searchInput",
     component: searchInput,
   },
+  //JS
   {
     path: "/echartsTest",
     name: "echartsTest",
@@ -82,16 +79,26 @@ const routes = [
     component: excalopr,
   },
   {
+    path: "/sortFun",
+    name: "sortFun",
+    component: sortFun,
+  },
+  {
     path: "/NodeApi",
     name: "NodeApi",
     component: NodeApi,
+  },
+  {
+    path: "/deepClone",
+    name: "deepClone",
+    component: deepClone,
   },
 ];
 
 const router = new VueRouter({
   // mode: "history",
   base: process.env.BASE_URL,
-  routes
+  routes,
 });
 
 export default router;
