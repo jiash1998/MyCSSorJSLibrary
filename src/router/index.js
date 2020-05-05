@@ -18,6 +18,8 @@ import echartsTest from "../views/JSFun/echartsTest";
 import excalopr from "../views/JSFun/excalopr";
 import NodeApi from "../views/JSFun/NodeApi";
 import deepClone from "../views/JSFun/deepClone";
+import EventLoop from "../views/JSFun/EventLoop";
+
 
 Vue.use(VueRouter);
 
@@ -92,6 +94,11 @@ const routes = [
     path: "/deepClone",
     name: "deepClone",
     component: deepClone,
+  },
+  {
+    path: "/EventLoop",
+    name: "EventLoop",
+    component: EventLoop,
   },
 ];
 
