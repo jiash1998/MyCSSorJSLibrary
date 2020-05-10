@@ -16,6 +16,7 @@
           <router-link to="/excalopr" tag="button">表格操作</router-link>
           <router-link to="/deepClone" tag="button">深度克隆</router-link>
           <router-link to="/EventLoop" tag="button">Event Loop</router-link>
+          <router-link to="/funCurry" tag="button">函数柯里化</router-link>
           <!-- <br />
           <a href="#">登录</a>
           <a href="#">注册</a>

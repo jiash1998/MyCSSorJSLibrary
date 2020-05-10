@@ -19,6 +19,7 @@ import excalopr from "../views/JSFun/excalopr";
 import NodeApi from "../views/JSFun/NodeApi";
 import deepClone from "../views/JSFun/deepClone";
 import EventLoop from "../views/JSFun/EventLoop";
+import funCurry from "../views/JSFun/funCurry";
 
 
 Vue.use(VueRouter);
@@ -99,6 +100,11 @@ const routes = [
     path: "/EventLoop",
     name: "EventLoop",
     component: EventLoop,
+  },
+  {
+    path: "/funCurry",
+    name: "funCurry",
+    component: funCurry,
   },
 ];
 
