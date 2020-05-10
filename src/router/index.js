@@ -20,6 +20,7 @@ import NodeApi from "../views/JSFun/NodeApi";
 import deepClone from "../views/JSFun/deepClone";
 import EventLoop from "../views/JSFun/EventLoop";
 import funCurry from "../views/JSFun/funCurry";
+import mvvmUse from "../views/JSFun/mvvmUse";
 
 
 Vue.use(VueRouter);
@@ -105,6 +106,11 @@ const routes = [
     path: "/funCurry",
     name: "funCurry",
     component: funCurry,
+  },
+  {
+    path: "/mvvmUse",
+    name: "mvvmUse",
+    component: mvvmUse,
   },
 ];
 

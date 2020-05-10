@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        {{title}}
+        <h2>{{title}}</h2>
+        <input v-model="name" />
+        <h1>{{name}}</h1>
+        <button v-on:click="clickMe">点击！</button>
+        {{name}}
+    </div>
+    <script src="../../JsUtil/MvvmJS/observe.js"></script>
+    <script src="../../JsUtil/MvvmJS/watcher.js"></script>
+    <script src="../../JsUtil/MvvmJS/compile.js"></script>
+    <script src="../../JsUtil/MvvmJS/index.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                title: 'vue',
+                name: '绑定'
+            },
+            methods: {
+                clickMe: function () {
+                    this.title = '被点了';
+                }
+            },
+            mounted() {
+                window.setTimeout(() => {
+                    this.title = '1秒变身';
+                }, 1000);
+            }
+        });
+    </script>
+</body>
+
+</html>
