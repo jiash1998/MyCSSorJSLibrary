@@ -7,17 +7,19 @@
       <div class="con">
         <div class="left">
           <p>JS</p>
+          <router-link to="/algorithmJob" tag="button">算法作业</router-link>
           <button @click="test1(vm)">函数防抖{{num1}}</button>
           <button @click="test2(vm)">函数节流{{num2}}</button>
           <button @click="settime">定时器返回值</button>
           <router-link to="/sortFun" tag="button">排序算法</router-link>
-           <router-link to="/NodeApi" tag="button">node接口测试</router-link>
+          <router-link to="/NodeApi" tag="button">node接口测试</router-link>
           <router-link to="/echartsTest" tag="button">Echarts饼图测试</router-link>
           <router-link to="/excalopr" tag="button">表格操作</router-link>
           <router-link to="/deepClone" tag="button">深度克隆</router-link>
           <router-link to="/EventLoop" tag="button">Event Loop</router-link>
           <router-link to="/funCurry" tag="button">函数柯里化</router-link>
           <router-link to="/mvvmUse" tag="button">MVVM 简单实现</router-link>
+
           <!-- <br />
           <a href="#">登录</a>
           <a href="#">注册</a>

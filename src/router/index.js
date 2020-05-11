@@ -21,6 +21,7 @@ import deepClone from "../views/JSFun/deepClone";
 import EventLoop from "../views/JSFun/EventLoop";
 import funCurry from "../views/JSFun/funCurry";
 import mvvmUse from "../views/JSFun/mvvmUse";
+import algorithmJob from "../views/JSFun/algorithmJob";
 
 
 Vue.use(VueRouter);
@@ -111,6 +112,11 @@ const routes = [
     path: "/mvvmUse",
     name: "mvvmUse",
     component: mvvmUse,
+  },
+  {
+    path: "/algorithmJob",
+    name: "algorithmJob",
+    component: algorithmJob,
   },
 ];
 

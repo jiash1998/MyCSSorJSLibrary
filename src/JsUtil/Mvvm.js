@@ -53,7 +53,7 @@ function Observe(data) {
     Object.defineProperty(data, key, {
       enumerable: true,
       get() {
-        Dep.target && dep.addSub(Dep.target); // [watcher]
+        Dep.target && dep.addSub(Dep.target); //  将watcher添加到订阅事件中 [watcher]
         return val;
       },
       set(newVal) {
@@ -142,6 +142,7 @@ function Compile(el, vm) {
           });
         });
       }
+      // 如果还有子节点，继续递归replace
       if (node.childNodes && node.childNodes.length) {
         replace(node);
       }
@@ -156,6 +157,7 @@ function Compile(el, vm) {
 // 那么需要将数据劫持和编译联合一下了
 // 发布订阅
 function Dep() {
+  // 一个数组(存放函数的事件池)
   this.subs = [];
 }
 
@@ -167,6 +169,7 @@ Dep.prototype.notify = function() {
 };
 
 // watcher
+// 通过Watcher这个类创建的实例，都拥有update方法
 function Watcher(vm, exp, fn) {
   this.fn = fn;
   this.vm = vm;
