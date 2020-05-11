@@ -11,6 +11,8 @@ import heightTest from "../views/CSSEffects/heightTest";
 import btnSocialShare from "../views/CSSEffects/btnSocialShare";
 import mediaTest from "../views/CSSEffects/mediaTest";
 import searchInput from "../views/CSSEffects/searchInput";
+import toTop from "../views/CSSEffects/toTop";
+
 
 //JS
 import sortFun from "../views/JSFun/sortFun";
@@ -71,6 +73,11 @@ const routes = [
     path: "/searchInput",
     name: "searchInput",
     component: searchInput,
+  },
+  {
+    path: "/toTop",
+    name: "toTop",
+    component: toTop,
   },
   //JS
   {

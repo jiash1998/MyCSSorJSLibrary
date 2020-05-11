@@ -61,8 +61,9 @@ function Observe(data) {
           return;
         }
         val = newVal;
-        observe(newVal); // 给修改的新值也定义属性
-        dep.notify(); // 让所有的watcher的update方法执行即可
+        observe(newVal); // 给修改的新值也定义get/set属性
+        //当set修改值的时候执行了dep.notify方法，这个方法是执行watcher的update方法
+        dep.notify();
       },
     });
   }
@@ -89,8 +90,7 @@ function Compile(el, vm) {
   let fragment = document.createDocumentFragment();
 
   while ((child = vm.$el.firstChild)) {
-    // 这时刷新页面发现页面的内容没有了
-    // 因为已将el中的内容放入内存中
+    // 将 el 中的内容放入内存中
     fragment.appendChild(child);
   }
   replace(fragment);
@@ -107,8 +107,14 @@ function Compile(el, vm) {
             // console.log(placeholder);
             // 匹配到的分组 如：song, album.name, singer...
 
-            new Watcher(vm, placeholder, replaceTxt); // 监听变化，重新进行匹配替换内容
+            // 监听变化，重新进行匹配替换内容
+            // 给Watcher再添加两个参数，用来取新的值(newVal)给回调函数传参
+            new Watcher(vm, placeholder, replaceTxt);
 
+            //placeholder.split(".") 为 数组，里面装着 {{}} 中解析出来的内容
+            // placeholder.split(".").reduce((val, key) => {
+            //   return val[key];
+            // }, vm); 返回的是 节点 文本内容
             return placeholder.split(".").reduce((val, key) => {
               return val[key];
             }, vm);
@@ -177,17 +183,23 @@ function Watcher(vm, exp, fn) {
   Dep.target = this;
   let val = vm;
   let arr = exp.split(".");
+  //取值 {{}} 中的值
+  // 获取到this.a.b，默认就会调用get方法
   arr.forEach((key) => {
     val = val[key];
+    // console.log(val);
   });
   Dep.target = null;
 }
 
 Watcher.prototype.update = function() {
+  // notify的时候值已经更改了
+  // 再通过vm, exp来获取新的值
   let val = this.vm;
   let arr = this.exp.split(".");
   arr.forEach((key) => {
-    val = val[key];
+    val = val[key]; // 通过get获取到新的值
+    // console.log(val);
   });
-  this.fn(val); // newVal
+  this.fn(val); //将每次拿到的新值去替换{{}}的内容即可
 };
