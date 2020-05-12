@@ -1,0 +1,25 @@
+#client {
+//   display: flex;
+  height: 1000px;
+  .div1 {
+    overflow: auto;
+    overflow-x: scroll;
+    height: 300px;
+    width: 300px;
+    background-color: pink;
+    border: 3px solid blue;
+
+    h1:nth-child(1) {
+      width: 400px;
+    }
+  }
+
+  .div2 {
+    position: fixed;
+    top: 80%;
+    left: 80%;
+    width: 100px;
+    height: 100px;
+    background-color: pink;
+  }
+}

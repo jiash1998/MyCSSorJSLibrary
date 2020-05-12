@@ -79,5 +79,5 @@ export default {
 </script>
 
 <style lang="scss">
-@import "../../assets/css/toTop.scss";
+@import "../../assets/css/offset.scss";
 </style>

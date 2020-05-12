@@ -11,7 +11,9 @@ import heightTest from "../views/CSSEffects/heightTest";
 import btnSocialShare from "../views/CSSEffects/btnSocialShare";
 import mediaTest from "../views/CSSEffects/mediaTest";
 import searchInput from "../views/CSSEffects/searchInput";
-import toTop from "../views/CSSEffects/toTop";
+import offset from "../views/CSSEffects/offset";
+import scroll from "../views/CSSEffects/scroll";
+import client from "../views/CSSEffects/client";
 
 
 //JS
@@ -75,9 +77,19 @@ const routes = [
     component: searchInput,
   },
   {
-    path: "/toTop",
-    name: "toTop",
-    component: toTop,
+    path: "/offset",
+    name: "offset",
+    component: offset,
+  },
+  {
+    path: "/scroll",
+    name: "scroll",
+    component: scroll,
+  },
+  {
+    path: "/client",
+    name: "client",
+    component: client,
   },
   //JS
   {

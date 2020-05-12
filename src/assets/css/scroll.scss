@@ -1,0 +1,25 @@
+#scroll {
+    position: relative;
+    // overflow: auto;
+    height: 1000px;
+    .div1 {
+        overflow: auto;
+        overflow-x: scroll;
+        height: 300px;
+        width: 300px;
+        background-color: pink;
+        
+        h1:nth-child(1) {
+            width: 400px;
+        }
+    }
+
+    .div2 {
+        // position: absolute;
+        height: 100px;
+        width: 100px;
+        background-color: gray;
+        // top: 200px;
+        // left: 500px;
+    }
+}

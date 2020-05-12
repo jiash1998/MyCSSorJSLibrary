@@ -35,7 +35,9 @@
           <router-link to="/heightTest" tag="button">高度自适应</router-link>
           <router-link to="/mediaTest" tag="button">媒体查询</router-link>
           <router-link to="/searchInput" tag="button">悬浮搜索框</router-link>
-          <router-link to="/toTop" tag="button">返回顶部</router-link>
+          <router-link to="/offset" tag="button">offset</router-link>
+          <router-link to="/scroll" tag="button">scroll</router-link>
+          <router-link to="/client" tag="button">client And Browser</router-link>
         </div>
       </div>
     </div>
