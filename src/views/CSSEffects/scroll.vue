@@ -55,5 +55,5 @@ export default {
 </script>
 
 <style lang="scss">
-@import "../../assets/css/scroll.scss";
+@import "../../assets/css/css_CSS/scroll.scss";
 </style>

@@ -8,5 +8,5 @@
 </template>
 
 <style lang="scss" scoped>
-@import "../../assets/css/searchInput.scss";
+@import "../../assets/css/css_CSS/searchInput.scss";
 </style>

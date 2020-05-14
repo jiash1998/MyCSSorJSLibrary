@@ -14,6 +14,7 @@ import searchInput from "../views/CSSEffects/searchInput";
 import offset from "../views/CSSEffects/offset";
 import scroll from "../views/CSSEffects/scroll";
 import client from "../views/CSSEffects/client";
+import imgOnload from "../views/CSSEffects/imgOnload";
 
 
 //JS
@@ -26,7 +27,6 @@ import EventLoop from "../views/JSFun/EventLoop";
 import funCurry from "../views/JSFun/funCurry";
 import mvvmUse from "../views/JSFun/mvvmUse";
 import algorithmJob from "../views/JSFun/algorithmJob";
-
 
 Vue.use(VueRouter);
 
@@ -90,6 +90,11 @@ const routes = [
     path: "/client",
     name: "client",
     component: client,
+  },
+  {
+    path: "/imgOnload",
+    name: "imgOnload",
+    component: imgOnload,
   },
   //JS
   {

@@ -87,5 +87,5 @@ export default {
 </script>
 
 <style lang="scss">
-@import "../../assets/css/client.scss";
+@import "../../assets/css/css_CSS/client.scss";
 </style>

@@ -38,6 +38,7 @@
           <router-link to="/offset" tag="button">offset</router-link>
           <router-link to="/scroll" tag="button">scroll</router-link>
           <router-link to="/client" tag="button">client And Browser</router-link>
+          <router-link to="/imgOnload" tag="button">图片预加载</router-link>
         </div>
       </div>
     </div>

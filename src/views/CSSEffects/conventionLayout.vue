@@ -26,5 +26,5 @@
 </script>
 
 <style lang="scss">
-@import "../../assets/css/conventionLayout.scss";
+@import "../../assets/css/css_CSS/conventionLayout.scss";
 </style>

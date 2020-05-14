@@ -34,5 +34,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "../../assets/css/btnEffects.scss";
+@import "../../assets/css/css_CSS/btnEffects.scss";
 </style>

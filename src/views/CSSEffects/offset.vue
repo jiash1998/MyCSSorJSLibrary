@@ -79,5 +79,5 @@ export default {
 </script>
 
 <style lang="scss">
-@import "../../assets/css/offset.scss";
+@import "../../assets/css/css_CSS/offset.scss";
 </style>
