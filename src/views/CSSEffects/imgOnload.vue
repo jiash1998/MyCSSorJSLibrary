@@ -1,41 +1,47 @@
 <template>
   <div id="imgOnload">
     <div class="imgDiv">
-      <img class="img1" :src="load" />
-      <img class="img2" :src="load" />
-      <img class="img3" :src="load" />
-      <img class="img4" :src="load" />
+      <div class="title">
+        <div class="imgTit">
+          <img class="img1" :src="load" />
+        </div>
+        <h1>This is a title</h1>
+        <img class="img2" :src="load" />
+        <img class="img2" :src="load" />
+        <h1>123</h1>
+      </div>
+      <div class="content">
+        <img class="img3" :src="load" />
+        <img class="img2" :src="load" />
+        <img class="img2" :src="load" />
+        <img class="img3" :src="load" />
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 import imgList from "../../JsUtil/css_js/imgList";
-import { imgonload } from "../../JsUtil/css_js/imgOnload";
+import * as Onload from "../../JsUtil/css_js/imgOnload";
 export default {
   name: "imgOnload",
   data() {
     return {
-      load: imgList.load,
-      img1: imgList.img1,
-      img2: imgList.img2,
-      img3: imgList.img3,
-      img4: imgList.img4
+      load: imgList.load
     };
   },
   mounted() {
-    let img1 = document.querySelector(".img1");
-    let img2 = document.querySelector(".img2");
-    let img3 = document.querySelector(".img3");
-
-    imgonload(img1,this.img2);
-    imgonload(img2,this.img3);
-    imgonload(img3,this.img4);
-
+    /**
+     * 用于函数预加载
+     * @method dealNodeList
+     * @param {String} nodename 节点名称, {String} vuename 页面名称
+     *
+     */
+    let p = Onload.dealNodeList("img", "imgOnload");
+    console.log(p);
   },
   methods: {
-    init() {
-    }
+    init() {}
   }
 };
 </script>
