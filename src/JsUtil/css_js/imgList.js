@@ -1,5 +1,5 @@
 var imgList = {
-  load: require("../../assets/img/loading2.jpg"),
+  load: require("../../assets/img/loading2.png"),
   imgOnload: {
     img1: require("../../assets/img/twitter.png"),
     img2: require("../../assets/img/mountain.jpg"),

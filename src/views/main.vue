@@ -39,6 +39,7 @@
           <router-link to="/scroll" tag="button">scroll</router-link>
           <router-link to="/client" tag="button">client And Browser</router-link>
           <router-link to="/imgOnload" tag="button">图片预加载</router-link>
+          <router-link to="/skeletonScreen" tag="button">骨架屏</router-link>
         </div>
       </div>
     </div>

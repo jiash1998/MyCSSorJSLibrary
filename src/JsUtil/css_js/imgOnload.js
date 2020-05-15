@@ -21,6 +21,8 @@ export const dealNodeList = (el = "img", vuename) => {
   let imgVue = imgList[vuename];
   let list = document.querySelectorAll(el);
 
+  console.log(list);
+
   //加载完成 设置路径
   list.forEach((item) => {
     imgOnload(item, imgVue[item.className]);

@@ -15,6 +15,7 @@ import offset from "../views/CSSEffects/offset";
 import scroll from "../views/CSSEffects/scroll";
 import client from "../views/CSSEffects/client";
 import imgOnload from "../views/CSSEffects/imgOnload";
+import skeletonScreen from "../views/CSSEffects/skeletonScreen";
 
 
 //JS
@@ -95,6 +96,11 @@ const routes = [
     path: "/imgOnload",
     name: "imgOnload",
     component: imgOnload,
+  },
+  {
+    path: "/skeletonScreen",
+    name: "skeletonScreen",
+    component: skeletonScreen,
   },
   //JS
   {
