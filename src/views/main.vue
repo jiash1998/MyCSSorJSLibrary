@@ -40,6 +40,7 @@
           <router-link to="/client" tag="button">client And Browser</router-link>
           <router-link to="/imgOnload" tag="button">图片预加载</router-link>
           <router-link to="/skeletonScreen" tag="button">骨架屏</router-link>
+          <router-link to="/skeletonMine" tag="button">骨架屏 Mine</router-link>
         </div>
       </div>
     </div>

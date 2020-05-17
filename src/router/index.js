@@ -16,6 +16,7 @@ import scroll from "../views/CSSEffects/scroll";
 import client from "../views/CSSEffects/client";
 import imgOnload from "../views/CSSEffects/imgOnload";
 import skeletonScreen from "../views/CSSEffects/skeletonScreen";
+import skeletonMine from "../views/CSSEffects/skeletonMine";
 
 
 //JS
@@ -101,6 +102,11 @@ const routes = [
     path: "/skeletonScreen",
     name: "skeletonScreen",
     component: skeletonScreen,
+  },
+  {
+    path: "/skeletonMine",
+    name: "skeletonMine",
+    component: skeletonMine,
   },
   //JS
   {

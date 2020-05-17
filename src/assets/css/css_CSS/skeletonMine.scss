@@ -1,0 +1,79 @@
+#skeletonMine {
+  height: 100vh;
+  background-color: pink;
+  overflow: hidden;
+
+  @keyframes skeleton {
+    0% {
+      background-position: -1100px 0;
+    }
+    100% {
+      background-position: 60px 0;
+    }
+  }
+  .skeleton_bgr {
+    width: 90%;
+    height: 300px;
+    margin: 10px 5%;
+    background-color: #fff;
+    overflow: hidden;
+
+    .animated_bgr {
+      position: relative;
+
+      height: 300px;
+      background: #f6f7f8;
+      animation-name: skeleton; //规定需要绑定到选择器的 keyframe 名称
+      animation-duration: 2.5s; //规定完成动画所花费的时间，以秒或毫秒计
+      animation-timing-function: linear; //规定动画的速度曲线
+      animation-delay: 0; //规定在动画开始之前的延迟
+      animation-iteration-count: infinite; //规定动画应该播放的次数
+      animation-direction: normal; //规定是否应该轮流反向播放动画。
+      animation-fill-mode: forwards;
+
+      background: linear-gradient(
+        to right,
+        #eeeeee 10%,
+        #eee 30%,
+        #eeeeee 50%,
+        #eee 70%,
+        #ddd 90%
+      );
+    }
+
+    .header {
+      width: 95%;
+      margin: 20px auto;
+      height: 50px;
+    }
+
+    .dis {
+      display: flex;
+    //   animation-duration: 0s;
+
+      .body_left1 {
+        width: 35%;
+        height: 30px;
+        margin: 30px;
+      }
+
+      .body_left2 {
+        width: 40%;
+        height: 30px;
+        margin: 30px;
+      }
+
+      .body_right1 {
+        width: 40%;
+        height: 30px;
+        margin: 30px;
+      }
+
+      .body_right2 {
+        width: 40%;
+        height: 30px;
+        margin: 30px;
+      }
+    }
+  }
+}
