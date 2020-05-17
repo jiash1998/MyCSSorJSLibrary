@@ -1,0 +1,27 @@
+#suckTop {
+   min-height: 100vh;
+
+   .body {
+
+    .head {
+        height: 68px;
+        // position: sticky;
+        // top: 0;
+        background-color: royalblue;
+    }
+
+    .content {
+        height: 800px;
+        background: linear-gradient(pink,gray,white );
+        // overflow: hidden;
+
+        // .test {
+        //     height: 80px;
+        //     background-color: #fff;
+        //     margin: 50px 0;
+        //     position: sticky;
+        //     top: 0;
+        // }
+    }
+   }
+}

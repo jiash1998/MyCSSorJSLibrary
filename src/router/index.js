@@ -17,7 +17,7 @@ import client from "../views/CSSEffects/client";
 import imgOnload from "../views/CSSEffects/imgOnload";
 import skeletonScreen from "../views/CSSEffects/skeletonScreen";
 import skeletonMine from "../views/CSSEffects/skeletonMine";
-
+import suckTop from "../views/CSSEffects/suckTop";
 
 //JS
 import sortFun from "../views/JSFun/sortFun";
@@ -29,6 +29,7 @@ import EventLoop from "../views/JSFun/EventLoop";
 import funCurry from "../views/JSFun/funCurry";
 import mvvmUse from "../views/JSFun/mvvmUse";
 import algorithmJob from "../views/JSFun/algorithmJob";
+import VueLifeCycle from "../views/JSFun/VueLifeCycle";
 
 Vue.use(VueRouter);
 
@@ -108,6 +109,11 @@ const routes = [
     name: "skeletonMine",
     component: skeletonMine,
   },
+  {
+    path: "/suckTop",
+    name: "suckTop",
+    component: suckTop,
+  },
   //JS
   {
     path: "/echartsTest",
@@ -153,6 +159,11 @@ const routes = [
     path: "/algorithmJob",
     name: "algorithmJob",
     component: algorithmJob,
+  },
+  {
+    path: "/VueLifeCycle",
+    name: "VueLifeCycle",
+    component: VueLifeCycle,
   },
 ];
 

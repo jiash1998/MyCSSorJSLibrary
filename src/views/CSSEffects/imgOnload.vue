@@ -7,13 +7,14 @@
         </div>
         <h1>This is a title</h1>
         <img class="img2" :src="load" />
-        <img class="img2" :src="load" />
         <h1>123</h1>
       </div>
       <div class="content">
-        <div v-for="(item, index) in customUrl" :key="index">
+        <img class="img2" :src="img2" />
+        <!-- <div class="load" v-for="index in loadNum" :key="index"></div> -->
+        <!-- <div v-for="(item, index) in customUrl" :key="index">
           <img :src="item" :class="'aximg' + index" />
-        </div>
+        </div>-->
       </div>
     </div>
   </div>
@@ -28,7 +29,9 @@ export default {
   data() {
     return {
       load: imgList.load,
-      customUrl: []
+      img2: imgList.img2,
+      customUrl: [],
+      loadNum: 0
     };
   },
   mounted() {
@@ -41,15 +44,16 @@ export default {
     let p = Onload.dealNodeList("img", "imgOnload");
     console.log(p);
     // this.test();
-    // this.getImg();
+    this.getImg();
   },
   methods: {
     getImg() {
       axios.get("http://118.31.12.146:8080/getAllCustom").then(res => {
+        this.loadNum = res.data.length;
         for (const i of res.data) {
           this.customUrl.push(i.url);
         }
-        console.log(this.customUrl);
+        // console.log(this.customUrl);
       });
     },
 

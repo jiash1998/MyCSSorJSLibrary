@@ -28,9 +28,15 @@
 
     .content {
         height: 500px;
+        // display: flex;
 
+        .load {
+          width: 100px;
+          height: 100px;
+          background-color: #eee;
+        }
         img {
-            height: 100px;
+            width: 100px;
         }
     }
   }

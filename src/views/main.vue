@@ -19,6 +19,7 @@
           <router-link to="/EventLoop" tag="button">Event Loop</router-link>
           <router-link to="/funCurry" tag="button">函数柯里化</router-link>
           <router-link to="/mvvmUse" tag="button">MVVM 简单实现</router-link>
+          <router-link to="/VueLifeCycle" tag="button">Vue 生命周期</router-link>
 
           <!-- <br />
           <a href="#">登录</a>
@@ -41,6 +42,7 @@
           <router-link to="/imgOnload" tag="button">图片预加载</router-link>
           <router-link to="/skeletonScreen" tag="button">骨架屏</router-link>
           <router-link to="/skeletonMine" tag="button">骨架屏 Mine</router-link>
+          <router-link to="/suckTop" tag="button">吸顶</router-link>
         </div>
       </div>
     </div>

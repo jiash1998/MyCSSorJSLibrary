@@ -24,7 +24,7 @@
       height: 300px;
       background: #f6f7f8;
       animation-name: skeleton; //规定需要绑定到选择器的 keyframe 名称
-      animation-duration: 2.5s; //规定完成动画所花费的时间，以秒或毫秒计
+      animation-duration: 2s; //规定完成动画所花费的时间，以秒或毫秒计
       animation-timing-function: linear; //规定动画的速度曲线
       animation-delay: 0; //规定在动画开始之前的延迟
       animation-iteration-count: infinite; //规定动画应该播放的次数
@@ -35,8 +35,8 @@
         to right,
         #eeeeee 10%,
         #eee 30%,
-        #eeeeee 50%,
-        #eee 70%,
+        #eee 50%,
+        rgb(235, 232, 232) 70%,
         #ddd 90%
       );
     }
@@ -49,7 +49,7 @@
 
     .dis {
       display: flex;
-    //   animation-duration: 0s;
+      //   animation-duration: 0s;
 
       .body_left1 {
         width: 35%;
