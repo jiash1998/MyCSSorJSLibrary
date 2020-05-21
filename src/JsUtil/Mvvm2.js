@@ -11,6 +11,9 @@ const Vue = (function() {
     // 触发target上的Watcher中的addDep方法,参数为dep的实例本身
     depend() {
       Dep.target.addDep(this);
+      // console.log("Dep.target");
+      console.log("Dep", Dep);
+      console.log("Dep.target", Dep.target);
     }
     // 添加订阅者
     addSub(sub) {
@@ -77,9 +80,11 @@ const Vue = (function() {
   class Watcher {
     constructor(vm, expOrFn, cb) {
       this.depIds = {}; // hash储存订阅者的id,避免重复的订阅者
+
       this.vm = vm; // 被订阅的数据一定来自于当前Vue实例
       this.cb = cb; // 当数据更新时想要做的事情
       this.expOrFn = expOrFn; // 被订阅的数据
+
       this.val = this.get(); // 维护更新之前的数据
     }
     // 对外暴露的接口，用于在订阅的数据被更新时，由订阅者管理员(Dep)调用
@@ -94,9 +99,10 @@ const Vue = (function() {
         this.depIds[dep.id] = dep;
       }
     }
+
     run() {
       const val = this.get();
-      console.log(val);
+      console.log("run()", val);
       if (val !== this.val) {
         this.val = val;
         this.cb.call(this.vm, val);
@@ -106,9 +112,10 @@ const Vue = (function() {
       // 当前订阅者(Watcher)读取被订阅数据的最新更新后的值时，通知订阅者管理员收集当前订阅者
       Dep.target = this;
       const val = this.vm._data[this.expOrFn];
+      console.log("get()", val, Dep.target);
+
       // 置空，用于下一个Watcher使用
       Dep.target = null;
-      console.log(Dep.target, 2);
       return val;
     }
   }
@@ -142,3 +149,18 @@ const Vue = (function() {
 
   return Vue;
 })();
+
+let demo = new Vue({
+  data: {
+    text: "",
+  },
+});
+
+const p = document.getElementById("p");
+const input = document.getElementById("input");
+
+input.addEventListener("keyup", function(e) {
+  demo.text = e.target.value;
+});
+
+demo.$watch("text", (str) => (p.innerHTML = str));

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="Id">id</button>
+    <!-- 工厂 -->
+    <!-- <script>
+        // 文本工厂
+        class Text {
+            constructor(text) {
+                this.text = text
+            }
+            insert(where) {
+                const txt = document.createTextNode(this.text)
+                where.appendChild(txt)
+            }
+        }
+
+        // DOM工厂  抽象工厂
+        class DomFactory {
+
+            constructor(type) {
+                return new (this[type]())
+            }
+
+            // 各流水线
+            link() { return Link }
+            text() { return Text }
+            image() { return Image }
+        }
+
+        // 创建工厂
+        const textFactory = new DomFactory('text')
+
+        textFactory.text = 'HI! I am surmon.'
+        textFactory.insert(document.body)
+    </script> -->
+    <!-- 单例模式 -->
+    <!-- <script>
+        // 创建div
+        var createWindow = function () {
+            var div = document.createElement("div");
+            div.innerHTML = "我是弹窗内容";
+            div.style.display = 'none';
+            document.body.appendChild(div);
+            return div;
+        };
+        // 创建iframe
+        var createIframe = function () {
+            var iframe = document.createElement("iframe");
+            document.body.appendChild(iframe);
+            return iframe;
+        };
+        // 获取实例的封装代码
+        var getInstance = function (fn) {
+            var result;
+            return function () {
+                console.log(arguments);
+                return result || (result = fn.call(this, arguments));
+            }
+        };
+        // 测试创建div
+        var createSingleDiv = getInstance(createWindow);
+        console.log(createSingleDiv);
+
+        document.getElementById("Id").onclick = function () {
+            var win = createSingleDiv();
+            console.log(win);
+
+            win.style.display = "block";
+        };
+
+        // 测试创建iframe
+        // var createSingleIframe = getInstance(createIframe);
+        // console.log(createSingleIframe);
+
+        // document.getElementById("Id").onclick = function () {
+        //     var win = createSingleIframe();
+        //     win.src = "http://baidu.com";
+        // };
+    </script> -->
+
+    <!-- 装饰者 -->
+    <!-- <script>
+        Function.prototype.before = function (beforefn) {
+            var self = this;    //保存原函数引用 this === function func()
+            return function () {  //返回包含了原函数和新函数的 '代理函数'
+                // var ret = self.apply(this, arguments);
+                beforefn.apply(this, arguments);    //执行新函数，修正 this === window
+                console.log("before", this, self);
+                return self.apply(this, arguments);  //执行原函数
+                // return ret;
+            }
+        }
+        // func.before(func1).after(func3)();
+        Function.prototype.after = function (afterfn) {
+            var self = this;  //before
+
+            return function () {
+                var ret = self.apply(this, arguments);
+                console.log("after1", this, self); //window  
+                afterfn.apply(this, arguments);  //执行新函数
+                console.log("after2");
+                return ret;
+                // return self.apply(this, arguments);
+            }
+        }
+
+        var func = function () {
+            console.log('2');
+        }
+        //func1和func3为挂载函数
+        var func1 = function () {
+            console.log('1');
+            // return function () {
+            //     console.log("1+");
+            // }
+        }
+        var func3 = function () {
+            console.log('3');
+        }
+        // func.before(func1)();
+        // console.log();
+
+        // func.before(func1).after(func3)();
+        func.after(func3).before(func1)();
+
+    </script> -->
+
+    <!-- 代理模式 预加载 -->
+    <!-- <script>
+        const myImage = (function () {
+            const imgNode = document.createElement('img')
+            document.body.appendChild(imgNode)
+            return {
+                setSrc: function (src) {
+                    imgNode.src = src
+                }
+            }
+        })()
+
+        const proxyImage = (function () {
+            const img = new Image()
+            img.onload = function () { // http 图片加载完毕后才会执行
+                myImage.setSrc(this.src) //this===img
+            }
+            return {
+                setSrc: function (src) {
+                    console.log(img);
+                    myImage.setSrc('../../assets/img/facebook.png') // 本地 loading 图片
+                    img.src = src
+                }
+            }
+        })()
+
+        proxyImage.setSrc('../../assets/img/mountain.jpg')
+    </script> -->
+
+    <!-- 代理模式 缓存计算 -->
+    <!-- <script>
+        // 计算乘法
+        var mult = function () {
+            var a = 1;
+            for (var i = 0, ilen = arguments.length; i < ilen; i += 1) {
+                a = a * arguments[i];
+            }
+            return a;
+        };
+        // 计算加法
+        var plus = function () {
+            var a = 0;
+            for (var i = 0, ilen = arguments.length; i < ilen; i += 1) {
+                a += arguments[i];
+            }
+            return a;
+        }
+        // 代理函数
+        var proxyFunc = function (fn) {
+            var cache = {};  // 缓存对象
+            return function () {
+                var args = Array.prototype.join.call(arguments, ',');
+                // console.log(cache);
+                // console.log(arguments);
+
+                if (args in cache) {
+                    return cache[args];   // 使用缓存代理
+                }
+                console.log(this);
+                return cache[args] = fn.apply(this, arguments);
+            }
+        };
+        var proxyMult = proxyFunc(mult);
+        console.log(proxyMult(1, 2, 3, 4)); // 24
+        console.log(proxyMult(1, 2, 3, 4)); // 缓存取 24
+
+        var proxyPlus = proxyFunc(plus);
+        console.log(proxyPlus(1, 2, 3, 4));  // 10
+        console.log(proxyPlus(1, 2, 3, 4));  // 缓存取 10
+    </script> -->
+
+    <!-- 观察者  -->
+    <script>
+        class Observer {
+            constructor() {
+                this.list = {};
+            }
+            //订阅者
+            listener(key, fn) {
+                this.list[key] = this.list[key] || []
+                this.list[key].push(fn)
+            }
+            //发布者
+            trigger() {
+                let key = Array.prototype.shift.call(arguments);
+                let event = this.list[key];
+                // console.log(event);
+
+                if (!event || event.length === 0) {
+                    return;
+                }
+
+                event.forEach(item => {
+                    item.apply(this, arguments);
+                });
+            }
+            //取消订阅
+            remove(key, fn) {
+                let event = this.list[key];
+
+                if (!event) {
+                    return false;
+                };
+
+                //传入回调函数，删除与之匹配的相关事件下的函数，没传就删除整个事件
+                if (!fn) {
+                    event = [];
+                } else {
+                    event.splice(event.findIndex(item => {
+                        return item === fn
+                    }));
+                }
+            }
+        };
+        var a = new Observer();
+
+        a.listener("shoes", fn1 = (size) => {
+            console.log("订阅者1：", size);
+        });
+        a.listener("shoes", fn2 = (size) => {
+            console.log("订阅者2：", size);
+        });
+        a.remove("shoes", fn2);
+        a.trigger("shoes", 43);
+        a.trigger("shoes", 432);
+
+    </script>
+</body>
+
+</html>
