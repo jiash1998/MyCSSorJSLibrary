@@ -63,6 +63,7 @@ function Observe(data) {
         val = newVal;
         observe(newVal); // 给修改的新值也定义get/set属性
         //当set修改值的时候执行了dep.notify方法，这个方法是执行watcher的update方法
+        // 通知所有订阅者，数值被改变了
         dep.notify();
       },
     });
@@ -167,9 +168,12 @@ function Dep() {
   this.subs = [];
 }
 
+//添加订阅者
 Dep.prototype.addSub = function(sub) {
   this.subs.push(sub);
 };
+
+// 通知所有的订阅者(Watcher)，触发订阅者的相应逻辑处理
 Dep.prototype.notify = function() {
   this.subs.forEach((sub) => sub.update());
 };
@@ -177,9 +181,9 @@ Dep.prototype.notify = function() {
 // watcher
 // 通过Watcher这个类创建的实例，都拥有update方法
 function Watcher(vm, exp, fn) {
-  this.fn = fn;
-  this.vm = vm;
-  this.exp = exp; // 添加到订阅中
+  this.fn = fn; // 当数据更新时想要做的事情
+  this.vm = vm; // 被订阅的数据一定来自于当前Vue实例
+  this.exp = exp; // 添加到订阅中,被订阅的数据
   Dep.target = this;
   let val = vm;
   let arr = exp.split(".");
@@ -192,6 +196,7 @@ function Watcher(vm, exp, fn) {
   Dep.target = null;
 }
 
+// 对外暴露的接口，用于在订阅的数据被更新时，由订阅者管理员(Dep)调用
 Watcher.prototype.update = function() {
   // notify的时候值已经更改了
   // 再通过vm, exp来获取新的值

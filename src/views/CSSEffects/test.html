@@ -204,7 +204,62 @@
         console.log(proxyPlus(1, 2, 3, 4));  // 缓存取 10
     </script> -->
 
-    <!-- 命令模式 -->
+    <!-- 观察者  -->
+    <script>
+        class Observer {
+            constructor() {
+                this.list = {};
+            }
+            //订阅者
+            listener(key, fn) {
+                this.list[key] = this.list[key] || []
+                this.list[key].push(fn)
+            }
+            //发布者
+            trigger() {
+                let key = Array.prototype.shift.call(arguments);
+                let event = this.list[key];
+                // console.log(event);
+
+                if (!event || event.length === 0) {
+                    return;
+                }
+
+                event.forEach(item => {
+                    item.apply(this, arguments);
+                });
+            }
+            //取消订阅
+            remove(key, fn) {
+                let event = this.list[key];
+
+                if (!event) {
+                    return false;
+                };
+
+                //传入回调函数，删除与之匹配的相关事件下的函数，没传就删除整个事件
+                if (!fn) {
+                    event = [];
+                } else {
+                    event.splice(event.findIndex(item => {
+                        return item === fn
+                    }));
+                }
+            }
+        };
+        var a = new Observer();
+
+        a.listener("shoes", fn1 = (size) => {
+            console.log("订阅者1：", size);
+        });
+        a.listener("shoes", fn2 = (size) => {
+            console.log("订阅者2：", size);
+        });
+        a.remove("shoes", fn2);
+        a.trigger("shoes", 43);
+        a.trigger("shoes", 432);
+
+    </script>
 </body>
 
 </html>
