@@ -44,6 +44,7 @@
           <router-link to="/skeletonMine" tag="button">骨架屏 Mine</router-link>
           <router-link to="/skeletonMineSec" tag="button">骨架屏 Mine 2</router-link>
           <router-link to="/suckTop" tag="button">吸顶</router-link>
+          <router-link to="/svgTest" tag="button">svg文件引入</router-link>
         </div>
       </div>
     </div>

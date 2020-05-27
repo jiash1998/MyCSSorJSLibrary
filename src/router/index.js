@@ -19,6 +19,8 @@ import skeletonScreen from "../views/CSSEffects/skeletonScreen";
 import skeletonMine from "../views/CSSEffects/skeletonMine";
 import suckTop from "../views/CSSEffects/suckTop";
 import skeletonMineSec from "../views/CSSEffects/skeletonMineSec";
+import svgTest from "../views/CSSEffects/svgTest";
+
 
 //JS
 import sortFun from "../views/JSFun/sortFun";
@@ -119,6 +121,11 @@ const routes = [
     path: "/skeletonMineSec",
     name: "skeletonMineSec",
     component: skeletonMineSec,
+  },
+  {
+    path: "/svgTest",
+    name: "svgTest",
+    component: svgTest,
   },
   //JS
   {

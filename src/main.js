@@ -4,6 +4,8 @@ import router from './router'
 import store from './store'
 import axios from "axios"; //axios
 import VueAxios from "vue-axios"; //axios
+//引入svg
+import "./icons";
 //引入excal操作
 // import Blob from '../src/JsUtil/excalOpr/Blob';
 // import Export2Excel from "../src/JsUtil/excalOpr/Export2Excel";
@@ -12,6 +14,8 @@ import VueAxios from "vue-axios"; //axios
 let echarts = require('echarts/lib/echarts');
 //引入饼图组件
 require('echarts/lib/chart/pie');
+
+
 
 Vue.config.productionTip = false
 Vue.use(VueAxios, axios);
