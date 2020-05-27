@@ -18,6 +18,7 @@ import imgOnload from "../views/CSSEffects/imgOnload";
 import skeletonScreen from "../views/CSSEffects/skeletonScreen";
 import skeletonMine from "../views/CSSEffects/skeletonMine";
 import suckTop from "../views/CSSEffects/suckTop";
+import skeletonMineSec from "../views/CSSEffects/skeletonMineSec";
 
 //JS
 import sortFun from "../views/JSFun/sortFun";
@@ -113,6 +114,11 @@ const routes = [
     path: "/suckTop",
     name: "suckTop",
     component: suckTop,
+  },
+  {
+    path: "/skeletonMineSec",
+    name: "skeletonMineSec",
+    component: skeletonMineSec,
   },
   //JS
   {

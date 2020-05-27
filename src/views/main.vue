@@ -42,6 +42,7 @@
           <router-link to="/imgOnload" tag="button">图片预加载</router-link>
           <router-link to="/skeletonScreen" tag="button">骨架屏</router-link>
           <router-link to="/skeletonMine" tag="button">骨架屏 Mine</router-link>
+          <router-link to="/skeletonMineSec" tag="button">骨架屏 Mine 2</router-link>
           <router-link to="/suckTop" tag="button">吸顶</router-link>
         </div>
       </div>

@@ -1,0 +1,74 @@
+$pubBgc: #eee;
+
+#pubSkeleton {
+  //水平方向问题
+  .dir_rtl {
+    direction: rtl;
+  }
+  .s_body {
+    display: flex;
+    // min-width: 800px;
+    // min-height: 120px;
+    // justify-content: flex-end;
+    background-color: pink;
+
+    //是否显示
+    .isDis {
+      display: none;
+    }
+
+    // 图像
+    .s_avatar {
+      height: 60px;
+      width: 60px;
+      min-width: 60px;
+      border-radius: 5px;
+      background-color: $pubBgc;
+
+      margin: 10px;
+    }
+
+    //矩形块
+    .s_block {
+      width: 200px;
+      height: 100px;
+      background-color: $pubBgc;
+      margin: 10px;
+    }
+
+    .add {
+      margin: 10px;
+    }
+
+    // 矩形条
+    .s_contain_art {
+      width: 100%;
+
+      //默认
+      .s_article {
+        height: 16px;
+        width: 50%;
+        background-color: $pubBgc;
+
+        margin: 10px 15px 25px;
+      }
+
+      //另加
+      .s_article_add {
+        height: 16px;
+        width: 80%;
+        background-color: $pubBgc;
+
+        margin: 15px 15px 10px;
+      }
+
+      .s_article_end {
+        height: 16px;
+        width: 65%;
+        background-color: $pubBgc;
+
+        margin: 15px;
+      }
+    }
+  }
+}
