@@ -20,7 +20,7 @@ import skeletonMine from "../views/CSSEffects/skeletonMine";
 import suckTop from "../views/CSSEffects/suckTop";
 import skeletonMineSec from "../views/CSSEffects/skeletonMineSec";
 import svgTest from "../views/CSSEffects/svgTest";
-
+import css_Middle from "../views/CSSEffects/css_Middle";
 
 //JS
 import sortFun from "../views/JSFun/sortFun";
@@ -126,6 +126,11 @@ const routes = [
     path: "/svgTest",
     name: "svgTest",
     component: svgTest,
+  },
+  {
+    path: "/css_Middle",
+    name: "css_Middle",
+    component: css_Middle,
   },
   //JS
   {
