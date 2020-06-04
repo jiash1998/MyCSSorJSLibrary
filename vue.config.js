@@ -2,29 +2,21 @@ const path = require("path");
 const resolve = (dir) => path.join(__dirname, ".", dir);
 
 module.exports = {
+  publicPath: process.env.NODE_ENV === "production" ? "./" : "/",
   devServer: {
     port: 8080,
     open: false,
     // proxy: {
     //   "/": {
-    //     target: "http://118.31.12.146:8080",
-    //     ws: true,
-    //     changeOrigin: true //创建一个虚拟服务器，
-    //     // pathRewrite: {
-    //     //   "^/api": "" //通配符
-    //     // }
-    //   }
-    // }
-    proxy: {
-      "/": {
-        target: "http://localhost:3000", //3000是node服务的端口
-        changeOrigin: true,
-        pathRewrite: {
-          "^/api": "",
-        },
-      },
-    },
+    //     target: "http://localhost:3000", //3000是node服务的端口
+    //     changeOrigin: true,
+    //     pathRewrite: {
+    //       "^/api": "",
+    //     },
+    //   },
+    // },
   },
+  //use svg
   chainWebpack(config) {
     config.module
       .rule("svg")
@@ -42,4 +34,35 @@ module.exports = {
       })
       .end();
   },
+  // css: {
+  //   requireModuleExtension: false,
+  //   loaderOptions: {
+  //     css: {
+  //       modules: {
+  //         localIdentName: "[local]_[hash:base64:8]",
+  //       },
+  //       localsConvention: "camelCaseOnly",
+  //     },
+  //   },
+  // },
+  // module: {
+  //   rules: [
+  //     // ... 其它规则省略
+  //     {
+  //       test: /\.css$/,
+  //       use: [
+  //         "vue-style-loader",
+  //         {
+  //           loader: "css-loader",
+  //           options: {
+  //             // 开启 CSS Modules
+  //             modules: true,
+  //             // 自定义生成的类名
+  //             localIdentName: "[local]_[hash:base64:8]",
+  //           },
+  //         },
+  //       ],
+  //     },
+  //   ],
+  // },
 };

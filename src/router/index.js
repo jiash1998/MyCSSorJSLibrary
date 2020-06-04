@@ -21,6 +21,8 @@ import suckTop from "../views/CSSEffects/suckTop";
 import skeletonMineSec from "../views/CSSEffects/skeletonMineSec";
 import svgTest from "../views/CSSEffects/svgTest";
 import css_Middle from "../views/CSSEffects/css_Middle";
+import vueScoped from "../views/CSSEffects/vueScoped";
+import cssModules from "../views/CSSEffects/cssModules";
 
 //JS
 import sortFun from "../views/JSFun/sortFun";
@@ -131,6 +133,16 @@ const routes = [
     path: "/css_Middle",
     name: "css_Middle",
     component: css_Middle,
+  },
+  {
+    path: "/vueScoped",
+    name: "vueScoped",
+    component: vueScoped,
+  },
+  {
+    path: "/cssModules",
+    name: "cssModules",
+    component: cssModules,
   },
   //JS
   {
