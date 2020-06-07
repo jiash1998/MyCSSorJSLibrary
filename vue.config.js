@@ -3,18 +3,41 @@ const resolve = (dir) => path.join(__dirname, ".", dir);
 
 module.exports = {
   publicPath: process.env.NODE_ENV === "production" ? "./" : "/",
+  // assetsDir:'assets',
+  // indexPath:"enter.html",
+  // pages: {
+  //   index: {
+  //     entry: "src/pages/index/index.js",
+  //     template: "src/pages/index/index.html",
+  //     filename: "index.html",
+  //   },
+  //   view1: {
+  //     entry: "src/pages/view1/view1.js",
+  //     template: "src/pages/view1/view1.html",
+  //     filename: "view1.html",
+  //   },
+  //   view2: {
+  //     entry: "src/pages/view2/view2.js",
+  //     template: "src/pages/view2/view2.html",
+  //     filename: "view2.html",
+  //   },
+  // },
+  
+  css:{
+    
+  },
   devServer: {
     port: 8080,
     open: false,
-    // proxy: {
-    //   "/": {
-    //     target: "http://localhost:3000", //3000是node服务的端口
-    //     changeOrigin: true,
-    //     pathRewrite: {
-    //       "^/api": "",
-    //     },
-    //   },
-    // },
+    proxy: {
+      "/": {
+        target: "http://localhost:3000", //3000是node服务的端口
+        changeOrigin: true,
+        pathRewrite: {
+          "^/api": "",
+        },
+      },
+    },
   },
   //use svg
   chainWebpack(config) {
