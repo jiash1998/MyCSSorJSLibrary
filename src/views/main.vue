@@ -46,7 +46,7 @@
           <router-link to="/suckTop" tag="button">吸顶</router-link>
           <router-link to="/svgTest" tag="button">svg文件引入</router-link>
           <router-link to="/css_Middle" tag="button">css middle question</router-link>
-          <router-link to="/vueScoped" tag="button">vue Scoped</router-link>
+          <router-link to="/vueScoped#tag1" tag="button">vue Scoped</router-link>
           <router-link to="/cssModules" tag="button">css Modules</router-link>
         </div>
       </div>

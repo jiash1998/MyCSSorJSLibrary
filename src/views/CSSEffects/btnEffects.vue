@@ -29,7 +29,34 @@
 
 <script>
 export default {
-  name: "btnEffects"
+  name: "btnEffects",
+  data() {
+    return {
+      data: 123
+    };
+  },
+  beforeRouteEnter: (to, from, next) => {
+    // alert(this.data); 这是无法访问 this
+    // alert(23); //页面停留在 from 路由
+    next(vm => {
+      //页面停留在 to 路由
+      alert(vm.data);
+    });
+  },
+  beforeRouteUpdate (to, from, next){
+    console.log("updata");
+    next();
+  },
+  beforeRouteLeave(to, from, next) {
+    const answer = window.confirm(
+      "Do you really want to leave? you have unsaved changes!"
+    );
+    if (answer) {
+      next();
+    } else {
+      next(false);
+    }
+  }
 };
 </script>
 

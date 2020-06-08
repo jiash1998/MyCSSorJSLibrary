@@ -1,6 +1,6 @@
 <template>
     <div id="cssModules">
-        <div class="$style.test">123</div>
+        <div class="test">123</div>
     </div>
 </template>
 
@@ -10,10 +10,10 @@
     }
 </script>
 
-<style lang="scss" module>
+<style lang="scss">
 .test {
     width: 100px;
-    height: 100px;
+    height: 1800px;
     background-color: pink;
 }
 </style>

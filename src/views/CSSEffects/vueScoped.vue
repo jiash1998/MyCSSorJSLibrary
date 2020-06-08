@@ -6,6 +6,7 @@
     </div>
     <el-button type="success">123</el-button>
     <comScoped></comScoped>
+    <div id="tag1"></div>
   </div>
 </template>
 

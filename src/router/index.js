@@ -143,6 +143,9 @@ const routes = [
     path: "/cssModules",
     name: "cssModules",
     component: cssModules,
+    meta: {
+      scrollSign: true,
+    },
   },
   //JS
   {
@@ -173,7 +176,7 @@ const routes = [
     },
     beforeEnter: (to, from, next) => {
       console.log("1");
-      
+
       if (to.meta.hahaha) {
         console.log("eachart");
         next();
@@ -221,6 +224,19 @@ const router = new VueRouter({
   // mode: "history",
   base: process.env.BASE_URL,
   routes,
+  // scrollBehavior(to, from, savedPosition) {
+  //   // ...
+  //   if (to.meta.scrollSign) {
+  //     console.log(to);
+  //   } else if (to.hash) {
+  //     return {
+  //       selector: to.hash,
+  //     };
+  //   } else {
+  //     return { x: 0, y: 0 };
+  //   }
+  //   console.log(to);
+  // },
 });
 
 // router.beforeEach((to, from, next) => {

@@ -8,7 +8,7 @@
   </div>
 </template>
 
-<script src="https://cdn.bootcdn.net/ajax/libs/blueimp-md5/2.16.0/js/md5.js"></script>
+
 <script>
 import bubbleFun from "../../JsUtil/sortFun.js";
 import selectFun from "../../JsUtil/sortFun.js";
@@ -23,7 +23,7 @@ export default {
   },
   methods: {
     to() {
-      console.log(hex_md5(123));
+      // console.log(hex_md5(123));
       
       // let id = window.btoa(123);
       // this.$router.push({
