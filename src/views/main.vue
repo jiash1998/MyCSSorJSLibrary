@@ -92,7 +92,9 @@ export default {
     // console.log(center);
     // this.get();
   },
-  created() {},
+  created() {
+    console.log(window.atob(this.$route.query.id));    
+  },
   methods: {
     test1: debounce(
       vm => {

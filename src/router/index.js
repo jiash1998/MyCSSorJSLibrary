@@ -149,6 +149,15 @@ const routes = [
     path: "/echartsTest",
     name: "echartsTest",
     component: echartsTest,
+    meta: {
+      hahaha: true,
+    },
+    beforeEach: (to, from, next) => {
+      if (to.meta.hahaha) {
+        console.log("eachart");
+        next();
+      }
+    },
   },
   {
     path: "/excalopr",
@@ -159,6 +168,17 @@ const routes = [
     path: "/sortFun",
     name: "sortFun",
     component: sortFun,
+    meta: {
+      hahaha: true,
+    },
+    beforeEnter: (to, from, next) => {
+      console.log("1");
+      
+      if (to.meta.hahaha) {
+        console.log("eachart");
+        next();
+      }
+    },
   },
   {
     path: "/NodeApi",
@@ -202,5 +222,34 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes,
 });
+
+// router.beforeEach((to, from, next) => {
+//   // if (to.meta.requireAuth) {
+//   //   console.log("enter");
+//   //   next();
+//   // } else {
+//   //   next();
+//   // }
+//   if (to.path == "/echartsTest") {
+//     next();
+//     console.log("emter");
+//   } else {
+//     next();
+//   }
+// });
+
+// router.afterEach((to, from) => {
+//   console.log(to);
+
+//   if (to.meta.hahaha) {
+//     console.log("enter");
+//   }
+//   // if (to.path == "/echartsTest") {
+//   //   next();
+//   //   console.log("emter");
+//   // } else {
+//   //   next();
+//   // }
+// });
 
 export default router;

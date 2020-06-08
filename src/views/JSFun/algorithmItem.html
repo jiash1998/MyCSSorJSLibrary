@@ -10,6 +10,14 @@
 <body>
     <!-- 1 -->
     <!-- <script>
+       /**
+        * 用于解决二分查找问题
+        * @method binarySearch
+        * @param {Number} lenA 数组长度
+        * @param {Array} arrA 有序数组
+        * @param {Number} tarA 目标数字
+        * @return {Object} 下标和目标数
+        */
         let len = 15;
         let array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20, 30, 60, 100, 110];
         let target = 30;
@@ -39,6 +47,13 @@
 
     <!-- 2 -->
     <!-- <script>
+       /**
+        * 用于解决最小公约数和最大公倍数
+        * @method Mathque
+        * @param {Number} a 数字a
+        * @param {Number} b 数字b
+        * @return {Number} 最小公约数
+        */
         let a = 12, b = 20;
 
         function Mathque(a, b) {
@@ -55,7 +70,13 @@
     </script> -->
 
     <!-- 3 -->
-    <script>
+    <!-- <script>
+       /**
+        * 用于解决登山问题
+        * @method getWays
+        * @param {Number} n 台阶级数
+        * @return {Number} 登山方式数量
+        */
         let t = 4;
 
         function getWays(n) {
@@ -75,6 +96,45 @@
             return temp;
         }
         console.log("台阶数量：", t, "方式数量：", getWays(t));
+    </script> -->
+
+    <!-- 4 -->
+
+    <!-- 5 -->
+    <script>
+        /**
+         * 用于解决旅游问题
+         * @method greedy
+         * @param {Number} n 满油行驶公里数
+         * @param {Number} k 加油站数
+         * @param {Number} arr 加油站之间距离
+         * @return {Number} 最少加油次数
+         */
+        let arr = [1, 2, 3, 4, 5, 1, 6, 6];
+        function greedy(n, k, arr) {
+            if (n == 0 || k == 0 || arr.length == 0 || arr[0] > n) {
+                return "No Solution!";
+            };
+            // res：加油次数; distance:已行驶距离
+            let res = 0, distance = 0;
+
+            for (let i = 0; i <= k; i++) {
+                distance += arr[i];
+                // 已行驶距离 > 满油公里数
+                if (distance > n) {
+                    // 如果目前加油站和前一个加油站的距离 > 满油公里数，则无法到达
+                    if (arr[i] > n) {
+                        return "No Solution!";
+                    };
+
+                    // 可以在上一个加油站加油，行驶到目前的加油站i：
+                    distance = arr[i];
+                    res++;
+                }
+            }
+            return res;
+        }
+        console.log("最少加油次数:",greedy(7, 8, arr));
     </script>
 </body>
 
