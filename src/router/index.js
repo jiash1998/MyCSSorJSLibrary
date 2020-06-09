@@ -35,6 +35,7 @@ import funCurry from "../views/JSFun/funCurry";
 import mvvmUse from "../views/JSFun/mvvmUse";
 import algorithmJob from "../views/JSFun/algorithmJob";
 import VueLifeCycle from "../views/JSFun/VueLifeCycle";
+import compComm from "../views/JSFun/compComm";
 
 Vue.use(VueRouter);
 
@@ -217,6 +218,11 @@ const routes = [
     path: "/VueLifeCycle",
     name: "VueLifeCycle",
     component: VueLifeCycle,
+  },
+  {
+    path: "/compComm",
+    name: "compComm",
+    component: compComm,
   },
 ];
 

@@ -20,7 +20,7 @@
           <router-link to="/funCurry" tag="button">函数柯里化</router-link>
           <router-link to="/mvvmUse" tag="button">MVVM 简单实现</router-link>
           <router-link to="/VueLifeCycle" tag="button">Vue 生命周期</router-link>
-
+          <router-link to="/compComm" tag="button">Vue 组件通信</router-link>
           <!-- <br />
           <a href="#">登录</a>
           <a href="#">注册</a>
@@ -69,7 +69,9 @@ export default {
       vm: this,
       num1: 0,
       num2: 0,
-      index: 0
+      index: 0,
+      //compComm
+      list:["a","b","c"],
     };
   },
   mounted() {
