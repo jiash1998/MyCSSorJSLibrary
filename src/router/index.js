@@ -23,6 +23,7 @@ import svgTest from "../views/CSSEffects/svgTest";
 import css_Middle from "../views/CSSEffects/css_Middle";
 import vueScoped from "../views/CSSEffects/vueScoped";
 import cssModules from "../views/CSSEffects/cssModules";
+import ElemPagination from "../views/CSSEffects/ElemPagination";
 
 //JS
 import sortFun from "../views/JSFun/sortFun";
@@ -37,6 +38,7 @@ import algorithmJob from "../views/JSFun/algorithmJob";
 import VueLifeCycle from "../views/JSFun/VueLifeCycle";
 import compComm from "../views/JSFun/compComm";
 import demo from "../views/JSFun/demo";
+import MixTest from "../views/JSFun/MixTest";
 
 Vue.use(VueRouter);
 
@@ -149,6 +151,16 @@ const routes = [
       scrollSign: true,
     },
   },
+  {
+    path: "/vueScoped",
+    name: "vueScoped",
+    component: vueScoped,
+  },
+  {
+    path: "/ElemPagination",
+    name: "ElemPagination",
+    component: ElemPagination,
+  },
   //JS
   {
     path: "/echartsTest",
@@ -229,7 +241,12 @@ const routes = [
     path: "/demo",
     name: "demo",
     component: demo,
-  }
+  },
+  {
+    path: "/MixTest",
+    name: "MixTest",
+    component: MixTest,
+  },
 ];
 
 const router = new VueRouter({

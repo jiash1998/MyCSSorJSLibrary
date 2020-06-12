@@ -22,6 +22,7 @@
           <router-link to="/VueLifeCycle" tag="button">Vue 生命周期</router-link>
           <router-link to="/compComm" tag="button">Vue 组件通信</router-link>
           <router-link to="/demo" tag="button">Demo</router-link>
+          <router-link to="/MixTest" tag="button">Vue 混入</router-link>
           <!-- <br />
           <a href="#">登录</a>
           <a href="#">注册</a>
@@ -49,6 +50,7 @@
           <router-link to="/css_Middle" tag="button">css middle question</router-link>
           <router-link to="/vueScoped#tag1" tag="button">vue Scoped</router-link>
           <router-link to="/cssModules" tag="button">css Modules</router-link>
+          <router-link to="/ElemPagination" tag="button">ElementUI 分页</router-link>
         </div>
       </div>
     </div>
@@ -96,7 +98,7 @@ export default {
     // this.get();
   },
   created() {
-    console.log(window.atob(this.$route.query.id));    
+    // console.log(window.atob(this.$route.query.id));    
   },
   methods: {
     test1: debounce(
