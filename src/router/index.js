@@ -36,6 +36,7 @@ import mvvmUse from "../views/JSFun/mvvmUse";
 import algorithmJob from "../views/JSFun/algorithmJob";
 import VueLifeCycle from "../views/JSFun/VueLifeCycle";
 import compComm from "../views/JSFun/compComm";
+import demo from "../views/JSFun/demo";
 
 Vue.use(VueRouter);
 
@@ -224,6 +225,11 @@ const routes = [
     name: "compComm",
     component: compComm,
   },
+  {
+    path: "/demo",
+    name: "demo",
+    component: demo,
+  }
 ];
 
 const router = new VueRouter({

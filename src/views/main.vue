@@ -21,6 +21,7 @@
           <router-link to="/mvvmUse" tag="button">MVVM 简单实现</router-link>
           <router-link to="/VueLifeCycle" tag="button">Vue 生命周期</router-link>
           <router-link to="/compComm" tag="button">Vue 组件通信</router-link>
+          <router-link to="/demo" tag="button">Demo</router-link>
           <!-- <br />
           <a href="#">登录</a>
           <a href="#">注册</a>
