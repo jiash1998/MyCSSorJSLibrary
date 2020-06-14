@@ -108,9 +108,34 @@
          * @return
          */
         let num = 4;
-        let arr = [[5,7,9],[5,6],[2]];
-         
-    
+        let arr = [1,2,3,4,5,6];
+        let rent = [];
+        let minRent = [];
+        test1(num, arr);
+        function test1(num, arr) {
+            for (let i = 1; i < num; i++) {
+                rent[i] = [];
+                for (let j = i + 1; j <= num; j++) {
+                    rent[i][j] = arr[i];
+                }
+            }
+            console.log(rent);
+            
+            get(num);
+        }
+        console.log("最少：",minRent);
+        
+        function get(num) {
+            minRent[1] = 0;
+            minRent[2] = rent[1][2];
+
+            for (let i = 3; i <= num; i++) {
+                minRent[i] = rent[1][i];
+                for (let j = 2; j < num; j++) {
+                    minRent[i] = Math.min(minRent[i], minRent[j] + rent[j][i]);
+                }
+            }
+        }
     </script>
 
     <!-- 5 -->
@@ -148,6 +173,41 @@
             return res;
         }
         console.log("最少加油次数:",greedy(7, 8, arr));
+    </script> -->
+
+    <!-- 6 -->
+    <!-- <script>
+        /**
+         * 用于解决烟花问题
+         * @method 
+         * @param {Array} arr
+         * @param {Number} target 几桶烟花
+         * @param {Number} num 燃放位置
+         */
+        let num = [1, 0];
+        let stack = [], item1 = [], item2 = [];
+        fireworks(num, 3, 0);
+        console.log("烟花数量：", 3);
+        console.log("燃放方案：", item2.length - item1.length);
+
+        function fireworks(arr, target, num) {
+            if (num == target) {
+                item2.push(stack.join(""));
+                for (let i = 0; i + 1 < stack.length; i++) {
+                    if ((stack[i] + stack[i + 1]) == 2) {
+                        item1.push(stack.join(""));
+                        break;
+                    }
+                }
+                return;
+            }
+
+            for (let i = 0; i < arr.length; i++) {
+                stack.push(arr[i]);
+                fireworks(arr, target, num + 1);
+                stack.pop();
+            }
+        }
     </script> -->
 </body>
 

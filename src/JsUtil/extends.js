@@ -1,7 +1,15 @@
-export const mixins = {
+export const myExtend = {
+  data() {
+    return {
+      name: "extends",
+    };
+  },
+  created() {
+    console.log("extends");
+  },
   methods: {
     logData() {
-      console.log("123");
+      console.log("extends");
     },
   },
 };

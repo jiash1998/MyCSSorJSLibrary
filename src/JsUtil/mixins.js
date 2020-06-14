@@ -1,13 +1,15 @@
 export const mixins = {
   data() {
     return {
-      mix1: 1,
-      mix2: { a: "asd" },
+      name: "mixins",
     };
+  },
+  created() {
+    console.log("mixins");
   },
   methods: {
     logData() {
-      console.log(this.mix1);
+      console.log("mixins");
     },
   },
 };

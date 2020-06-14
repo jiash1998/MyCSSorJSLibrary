@@ -13,6 +13,7 @@ import "element-ui/lib/theme-chalk/index.css";
 // import Blob from '../src/JsUtil/excalOpr/Blob';
 // import Export2Excel from "../src/JsUtil/excalOpr/Export2Excel";
 
+
 //引入基本模板
 let echarts = require('echarts/lib/echarts');
 //引入饼图组件
