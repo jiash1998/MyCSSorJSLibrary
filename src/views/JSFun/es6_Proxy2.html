@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- <script>
+        var pipe = function (value) {
+            var funcStack = [];
+            var oproxy = new Proxy({}, {
+                get: function (pipeObject, fnName) {
+                    console.log("enter get,fnName:", fnName);
+                    if (fnName === 'get') {
+                        console.log("fnName == get时,funcStack：", funcStack);
+                        return funcStack.reduce(function (val, fn) {
+                            return fn(val);
+                        }, value);
+                    }
+                    funcStack.push(window[fnName]);
+                    console.log("funcStack:", funcStack);
+                    return oproxy;
+                }
+            });
+
+            return oproxy;
+        }
+
+        var double = n => n * 2;
+        var pow = n => n * n;
+        var reverseInt = n => n.toString().split("").reverse().join("") | 0;
+
+        console.log(pipe(3).double.get);
+         // 63
+    </script> -->
+    <!-- <script>
+        const dom = new Proxy({}, {
+            get(target, property) {
+                
+                return function (attrs = {}, ...children) {
+                    console.log("attrs:", attrs);
+                    console.log("children:", ...children);
+                    console.log("property:", property);
+
+                    const el = document.createElement(property);
+                    for (let prop of Object.keys(attrs)) {
+                        //设置指定属性，（属性名，属性值）
+                        el.setAttribute(prop, attrs[prop]);
+                    }
+                    //创建文本节点
+                    for (let child of children) {
+                        if (typeof child === 'string') {
+                            child = document.createTextNode(child);
+                        }
+                        el.appendChild(child);
+                    }
+                    return el;
+                }
+            }
+        });
+
+        const el = dom.div({},
+            'Hello, my name is ',
+            dom.a({ href: '//example.com' }, 'Mark'),
+            '. I like:',
+        );
+        document.body.appendChild(el);
+    </script> -->
+    <script>
+        const handler = {
+            set: function (obj, prop, value, receiver) {
+                console.log(obj, prop, value);
+                obj[prop] = receiver;
+            }
+        };
+        const proxy = new Proxy({}, handler);
+        proxy.foo = 'bar';
+        proxy.foo === proxy // true
+    </script>
+</body>
+
+</html>

@@ -39,6 +39,7 @@ import VueLifeCycle from "../views/JSFun/VueLifeCycle";
 import compComm from "../views/JSFun/compComm";
 import demo from "../views/JSFun/demo";
 import MixTest from "../views/JSFun/MixTest";
+import es6_Proxy from "../views/JSFun/es6_Proxy";
 
 Vue.use(VueRouter);
 
@@ -247,7 +248,13 @@ const routes = [
     name: "MixTest",
     component: MixTest,
   },
+  {
+    path: "/es6_Proxy",
+    name: "es6_Proxy",
+    component: es6_Proxy,
+  },
 ];
+
 
 const router = new VueRouter({
   // mode: "history",

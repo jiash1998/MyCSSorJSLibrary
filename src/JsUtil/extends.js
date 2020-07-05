@@ -1,4 +1,5 @@
-export const myExtend = {
+let myExtend = {};
+export default myExtend = {
   data() {
     return {
       name: "extends",
