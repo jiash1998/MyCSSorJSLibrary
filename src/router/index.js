@@ -40,6 +40,8 @@ import compComm from "../views/JSFun/compComm";
 import demo from "../views/JSFun/demo";
 import MixTest from "../views/JSFun/MixTest";
 import es6_Proxy from "../views/JSFun/es6_Proxy";
+import visualLayout from "../views/JSFun/visualLayout";
+
 
 Vue.use(VueRouter);
 
@@ -252,6 +254,11 @@ const routes = [
     path: "/es6_Proxy",
     name: "es6_Proxy",
     component: es6_Proxy,
+  },
+  {
+    path: "/visualLayout",
+    name: "visualLayout",
+    component: visualLayout,
   },
 ];
 

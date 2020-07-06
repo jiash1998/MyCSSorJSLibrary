@@ -24,6 +24,7 @@
           <router-link to="/demo" tag="button">Demo</router-link>
           <router-link to="/MixTest" tag="button">Vue 混入</router-link>
           <router-link to="/es6_Proxy" tag="button">ES6 Proxy</router-link>
+          <router-link to="/visualLayout" tag="button">可视化布局</router-link>
           <!-- <br />
           <a href="#">登录</a>
           <a href="#">注册</a>
