@@ -1,4 +1,9 @@
 <template>
+  <!-- 
+  动态编辑css，并编译：scopedCss
+  代码文本高亮：highlight.js，vue-hignlightjs
+  剪切板：vue-clipboard2
+  -->
   <div id="visualLayout">
     <el-form :model="testForm">
       <el-form-item label="测试框">
@@ -6,21 +11,32 @@
       </el-form-item>
     </el-form>
     <el-button type="primary" @click="test3">点击生成div</el-button>
+    <el-button type="primary" @click="getCode">格式化代码</el-button>
+    <pre v-highlightjs>
+    <!-- <code class="css" contenteditable>                
+      [CSS]
+      {{text}}
+      </code> -->
+      <code class="css" v-html="text" contenteditable>                
+      </code>
+    </pre>
     <div id="layout" ref="preview">
-        <p>123</p>
+      <p>1213</p>
     </div>
   </div>
 </template>
 
 <script>
 import scopedCss from "scopedcss";
+import pretty from "pretty";
 export default {
   name: "visualLayout",
   data() {
     return {
       testForm: {
         input1: ""
-      }
+      },
+      text: "p{color:red;}"
     };
   },
   methods: {
@@ -39,6 +55,17 @@ export default {
       iframe.src = URL.createObjectURL(blob);
       document.body.appendChild(iframe);
     },
+    getCode() {
+      //       let a = `<!DOCTYPE html> <html lang="en"> <head>
+      // <meta charset="UTF-8"> <title>Home</title>
+      // </head> <body> <h1>This is content. </h1></body> </html>`;
+      // let a = "<style lang='scss' scoped>p{color:blue;}</style>";
+      let a = "p{color:blue;}";
+      //先使用pretty格式化，再用正则给剥离出来；
+      this.text = pretty(a);
+      console.log(this.text);
+      // return a;
+    },
     test3() {
       let style = document.getElementById("custom-layout");
       if (!style) {
@@ -48,7 +75,8 @@ export default {
         style.type = "text/css";
         this.$refs.preview.appendChild(style);
       }
-      const cssText = document.createTextNode("p{color:red;font-size:2em;}");
+      console.log(this.text);
+      const cssText = document.createTextNode(this.text);
       style.innerHTML = "";
       style.appendChild(cssText);
       // 动态添加scoped style
