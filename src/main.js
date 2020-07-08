@@ -19,7 +19,10 @@ import pretty from "pretty";
 // import Highlight from "../src/JsUtil/highlight";
 // Vue.use(Highlight);
 import VueHighlightJS from "vue-highlightjs";
-import "highlight.js/styles/monokai-sublime.css";
+// import "highlight.js/styles/monokai-sublime.css";
+// import "highlight.js/styles/arduino-light.css";
+import "highlight.js/styles/atom-one-light.css";
+
 // 为代码文本提供高亮、缩进
 Vue.use(VueHighlightJS);
 // 为代码文本格式化

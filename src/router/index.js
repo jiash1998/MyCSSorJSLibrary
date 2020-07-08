@@ -41,7 +41,7 @@ import demo from "../views/JSFun/demo";
 import MixTest from "../views/JSFun/MixTest";
 import es6_Proxy from "../views/JSFun/es6_Proxy";
 import visualLayout from "../views/JSFun/visualLayout";
-
+import visualLayout2 from "../views/JSFun/visualLayout2";
 
 Vue.use(VueRouter);
 
@@ -260,8 +260,12 @@ const routes = [
     name: "visualLayout",
     component: visualLayout,
   },
+  {
+    path: "/visualLayout2",
+    name: "visualLayout2",
+    component: visualLayout2,
+  },
 ];
-
 
 const router = new VueRouter({
   // mode: "history",
