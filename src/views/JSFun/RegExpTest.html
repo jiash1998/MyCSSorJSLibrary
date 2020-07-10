@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .item {
+            width: 100px;
+            height: 100px;
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+
+    <script>
+        let items = document.getElementsByClassName("item");
+        let i;
+
+        for (i = 0; i < items.length; i++) {
+            (items[i].onclick = function () {
+                items[i].style.cssText = 'background:pink';
+            })()
+        }
+        let str = "what are you doing ?";
+        // let regexp1 = /[^at]/g;
+        // let regexp2 = /[wh]/g;
+        // console.log(str.match(regexp1));
+        // console.log(str.match(regexp2));
+
+        // let regexp3 = /doing|are/;
+        // console.log(str.match(regexp3));
+
+        // var regex = /nice|good/;
+        // var string = "good idea, nice try.";
+        // console.log(string.match(regex));
+        // let str2 = "#000 #Fsda00 #121212 #ds #_sss";
+        // let regexp4 = /#\w{3,6}/g;
+        // console.log(str2.match(regexp4));
+
+        // let str3 = "23:59";
+        // let str4 = "02:09";
+        // let regexp5 = /^([2][0-3]|[01]\d):[0-5]\d$/; 
+        // console.log(regexp5.test(str3));
+        // console.log(regexp5.test(str4));
+
+        // let str5 = "2020-09-12";
+        // let regexp6 = /^\d{4}-{0\d|1[0-2]}-[0-3]\d$/;
+
+        var result = "I\nlove\njavascript".replace(/^|$/gm, '^');
+        console.log(result);
+    </script>
+</body>
+
+</html>
