@@ -20,15 +20,15 @@
     <div class="item"></div>
 
     <script>
-        let items = document.getElementsByClassName("item");
-        let i;
+        // let items = document.getElementsByClassName("item");
+        // let i;
 
-        for (i = 0; i < items.length; i++) {
-            (items[i].onclick = function () {
-                items[i].style.cssText = 'background:pink';
-            })()
-        }
-        let str = "what are you doing ?";
+        // for (i = 0; i < items.length; i++) {
+        //     (items[i].onclick = function () {
+        //         items[i].style.cssText = 'background:pink';
+        //     })()
+        // }
+        // let str = "what are you doing ?";
         // let regexp1 = /[^at]/g;
         // let regexp2 = /[wh]/g;
         // console.log(str.match(regexp1));
@@ -53,8 +53,74 @@
         // let str5 = "2020-09-12";
         // let regexp6 = /^\d{4}-{0\d|1[0-2]}-[0-3]\d$/;
 
-        var result = "I\nlove\njavascript".replace(/^|$/gm, '^');
-        console.log(result);
+        //2
+        // var result = "I\nlove\njavascript".replace(/^|$/gm, '^');
+        // console.log(result);
+        // let e1 = "s1s1s1";
+        // var reg1 = /(?=.+[0-9])^[0-9A-Za-z]{1,6}$/;
+        // var reg2 = /^(?=.*[0-9])[0-9A-Za-z]{1,6}$/;
+
+        // console.log(reg1.test(e1));
+        // console.log(reg2.test(e1));
+        // console.log(e1.match(reg2));
+
+        //3
+        // var reg1 = "JavaScript";
+        // var regex = /I love (JavaScript|Regular Expression)/;
+        // console.log(regex.test("a I love JavaScript"));
+        // // console.log(regex.test("JavaScript"));
+        // console.log("a I love JavaScript".match(regex));
+
+        // var regex = /^((\d)(\d(\d)))\1\2\3\4$/;
+        // var string = "1231231233";
+        // console.log(regex.test(string)); // true
+        // console.log(RegExp.$1); // 123
+        // console.log(RegExp.$2); // 1
+        // console.log(RegExp.$3); // 23
+        // console.log(RegExp.$4); // 3
+
+
+        // function camelize(str) {
+        //     return str.replace(/[-_\s]+(.)/g, function (match, c) {
+        //         return c ? c.toUpperCase() : '';
+        //     });
+        // }
+        // console.log(camelize('moz-transform'));
+        // let reg = /[-_\s]+(.)/g;
+        // console.log("-moz-transform".match(reg));
+
+        //api
+        // let str = "who are you ? who yours ?";
+        // let ind = "who";
+        // let reg = /(\w){3,5}/g;
+        // let reg2 = /(\w+)/g;
+        // console.log(str.match(ind));
+        // console.log(str.match(reg));
+        // console.log(str.match(reg2));
+
+        // let reg1 = /(\w+)/g;
+        // console.log(str.match(reg1));
+        // console.log(str.replace(reg1,"1"));
+
+        // var a = "HeLLo hello";
+        // console.log(a.search(/LL/i));// return 2
+
+        // var str = "hey JudE";
+        // var re = /[a-z]/g;
+        // var re2 = /[A-Z]/g;
+        // console.log(str.search(re)); //return 0
+        // console.log(str.search(re2)); //return 4
+
+        // var myString = "Hello 1 word. Sentence number 2.";
+        // var splits = myString.split(/(\d)/);
+        // console.log(splits);
+
+        // var re = /quick\s(brown).+?(jumps)/ig;
+        // var result = re.exec('The Quick Brown Fox Jumps Over The Lazy Dog');
+        // console.log(result);
+        
+        // var email = "";
+        // var reg = /^\d{6-11}(@|)/;
     </script>
 </body>
 
