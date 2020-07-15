@@ -40,8 +40,10 @@ import compComm from "../views/JSFun/compComm";
 import demo from "../views/JSFun/demo";
 import MixTest from "../views/JSFun/MixTest";
 import es6_Proxy from "../views/JSFun/es6_Proxy";
-import visualLayout from "../views/JSFun/visualLayout";
-import visualLayout2 from "../views/JSFun/visualLayout2";
+//
+import visualLayout from "../views/GraduationDesign/visualLayout";
+import visualLayout2 from "../views/GraduationDesign/visualLayout2";
+import designDemo from "../views/GraduationDesign/demo";
 
 Vue.use(VueRouter);
 
@@ -264,6 +266,11 @@ const routes = [
     path: "/visualLayout2",
     name: "visualLayout2",
     component: visualLayout2,
+  },
+  {
+    path: "/designDemo",
+    name: "designDemo",
+    component: designDemo,
   },
 ];
 
