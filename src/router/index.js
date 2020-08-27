@@ -40,6 +40,8 @@ import compComm from "../views/JSFun/compComm";
 import demo from "../views/JSFun/demo";
 import MixTest from "../views/JSFun/MixTest";
 import es6_Proxy from "../views/JSFun/es6_Proxy";
+import eventDelegation from "../views/JSFun/eventDelegation";
+
 //
 import visualLayout from "../views/GraduationDesign/visualLayout";
 import visualLayout2 from "../views/GraduationDesign/visualLayout2";
@@ -271,6 +273,11 @@ const routes = [
     path: "/designDemo",
     name: "designDemo",
     component: designDemo,
+  },
+  {
+    path: "/eventDelegation",
+    name: "eventDelegation",
+    component: eventDelegation,
   },
 ];
 

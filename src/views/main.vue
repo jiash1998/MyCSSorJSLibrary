@@ -26,6 +26,7 @@
           <router-link to="/es6_Proxy" tag="button">ES6 Proxy</router-link>
           <router-link to="/visualLayout" tag="button">可视化布局</router-link>
           <router-link to="/visualLayout2" tag="button">可视化布局2</router-link>
+          <router-link to="/eventDelegation" tag="button">事件委托</router-link>
           <!-- <br />
           <a href="#">登录</a>
           <a href="#">注册</a>
