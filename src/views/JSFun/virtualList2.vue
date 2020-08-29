@@ -22,16 +22,58 @@ export default {
     // this.scrollT = document.documentElement.scrollTop;
     this.clientH = document.documentElement.clientHeight;
     // console.log( document.documentElement);
+    // console.log(window.navigator.userAgent);
     window.addEventListener("scroll", () => {
       console.log(
-        this.clientH,
+        document.documentElement.clientHeight,
+        document.body.scrollHeight,
         document.documentElement.scrollTop,
         document.documentElement.offsetHeight
       );
-      console.log(
-        this.clientH + Math.round(document.documentElement.scrollTop) ==
-          document.documentElement.offsetHeight
-      );
+      //   if (
+      //     document.documentElement.clientHeight +
+      //       Math.round(document.documentElement.scrollTop) ==
+      //       document.documentElement.offsetHeight ||
+      //     document.documentElement.clientHeight +
+      //       Math.round(document.documentElement.scrollTop) +
+      //       1 ==
+      //       document.documentElement.offsetHeight
+      //   ) {
+      //     console.log("true");
+      //   }
+      //   if (
+      //     Math.round(document.documentElement.scrollTop) +
+      //       document.documentElement.clientHeight ===
+      //     document.body.scrollHeight
+      //   ) {
+      //     alert("到底了");
+      //   }
+      var a =
+        window.innerHeight ||
+        document.documentElement.clientHeight ||
+        document.body.clientHeight;
+      var b =
+        document.documentElement.scrollTop == 0
+          ? document.body.scrollTop
+          : document.documentElement.scrollTop;
+      var c =
+        document.documentElement.scrollTop == 0
+          ? document.body.scrollHeight
+          : document.documentElement.scrollHeight;
+      //alert(document.body.clientHeight);
+      //alert(document.documentElement.clientHeight);
+      // alert(document.documentElement.scrollTop);
+      //alert(document.documentElement.scrollHeight);
+      //alert(document.body.scrollHeight);
+      if (
+        document.body.scrollTop == 0 &&
+        document.documentElement.scrollTop == 0
+      ) {
+        alert("到达顶端");
+      }
+      if (a + Math.floor(b) == c || a + Math.ceil(b) == c) {
+        alert("到达底部");
+      }
     });
   },
   methods: {
@@ -56,12 +98,10 @@ export default {
       };
     },
     //兼容事件
-    compatiableEvent(element, type,handler) {
-        if(element.addEventListener){
-            
-        }else if(element.attachEvent){
-
-        }
+    compatiableEvent(element, type, handler) {
+      if (element.addEventListener) {
+      } else if (element.attachEvent) {
+      }
     },
     //事件委托
     eventEntrust() {},
