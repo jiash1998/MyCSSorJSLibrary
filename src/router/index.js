@@ -40,7 +40,9 @@ import compComm from "../views/JSFun/compComm";
 import demo from "../views/JSFun/demo";
 import MixTest from "../views/JSFun/MixTest";
 import es6_Proxy from "../views/JSFun/es6_Proxy";
-import eventDelegation from "../views/JSFun/eventDelegation";
+// import eventDelegation from "../views/JSFun/eventDelegation";
+import virtualList1 from "../views/JSFun/virtualList1";
+import virtualList2 from "../views/JSFun/virtualList2";
 
 //
 import visualLayout from "../views/GraduationDesign/visualLayout";
@@ -275,9 +277,14 @@ const routes = [
     component: designDemo,
   },
   {
-    path: "/eventDelegation",
-    name: "eventDelegation",
-    component: eventDelegation,
+    path: "/virtualList1",
+    name: "virtualList1",
+    component: virtualList1,
+  },
+  {
+    path: "/virtualList2",
+    name: "virtualList2",
+    component: virtualList2,
   },
 ];
 

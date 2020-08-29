@@ -1,15 +1,15 @@
 <template>
   <div id="eventDelegation">
-    <!-- <div id="d1">1</div>
+    <div id="d1">1</div>
     <div id="d2">2</div>
     <div id="d3">3</div>
-     <div id="d4">4</div>
-    <div id="d5">5</div>
-    <div id="d6">6</div>
-    <div id="d7">7</div>
-    <div id="d8">8</div>
-    <div id="d9">9</div>
-    <div id="d10">10</div>-->
+    <div id="d4"></div>
+    <div id="d5"></div>
+    <div id="d6"></div>
+    <div id="d7"></div>
+    <div id="d8"></div>
+    <div id="d9"></div>
+    <div id="d10"></div>
   </div>
 </template>
 
@@ -20,25 +20,34 @@ export default {
   data() {
     return {
       list: [1, 2, 3, 4],
+      ob: {},
     };
   },
   mounted() {
     let father = this.$qs("#eventDelegation");
-    let div1 = this.$qs("#d1");
-    let d4 = this.$qs("#d4");
+    // let div1 = this.$qs("#d1");
+    // let d4 = this.$qs("#d4");
 
-    let count = document.getElementsByTagName("div");
-    // console.log(count.length);
-    this.init();
-    window.addEventListener(
-      "scroll",
-      this.throttle(this.windowEvent, 500, 1000)
+    let divAll = Array.from(
+      document.querySelector("#eventDelegation").childNodes
     );
+    // console.log(divAll);
+    divAll.forEach((item) => {
+      this.ob = new IntersectionObserver((entries) => {
+        console.log(entries[0].target);
+      });
+
+      this.ob.observe(item);
+    });
+    // this.init();
+    // window.addEventListener(
+    //   "scroll",
+    //   this.throttle(this.windowEvent, 500, 1000)
+    // );
     // this.windowEvent();
     // throttle(this.windowEvent, 500, 1000);
     // this.H5NewApi(this.$qs("#d1"));
     // console.log(div1,this.$qs("#d1"));
-    this.H5NewApi(this.$qs("#d4"));
   },
   destroyed() {
     console.log("byb11");
@@ -50,6 +59,7 @@ export default {
     realFunc() {
       console.log("Success");
     },
+    //节流
     throttle(func, wait, mustRun) {
       var timeout,
         startTime = new Date();
@@ -88,22 +98,25 @@ export default {
     },
     //H5 新api 监听交叉区
     H5NewApi(name) {
-      let ob = new IntersectionObserver(this.callback, {
+      this.ob = new IntersectionObserver(this.callback, {
         threshold: [0, 0.25, 0.5, 0.75, 1],
       });
 
-      ob.observe(name);
+      this.ob.observe(name);
     },
+    //intersectionObserver callback
     callback(entries) {
+      // console.log(entries[0].intersectionRatio);
       console.log(entries[0].target);
-      console.log(entries[0].intersectionRatio);
-      if (
-        entries[0].intersectionRatio > 0.25 &&
-        entries[0].intersectionRatio < 0.5
-      ) {
-        console.log("start");
-        this.addElement(0);
-      }
+      // if (
+      //   entries[0].intersectionRatio > 0.25 &&
+      //   entries[0].intersectionRatio < 0.5
+      // ) {
+      //   console.log(entries[0].target);
+      //   entries[0].target.innerHTML += "enter";
+      //   console.log("start");
+      //   this.ob.unobserve();
+      // }
     },
     //创建节点
     addElement(i) {

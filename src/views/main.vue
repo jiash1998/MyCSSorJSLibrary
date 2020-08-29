@@ -26,7 +26,9 @@
           <router-link to="/es6_Proxy" tag="button">ES6 Proxy</router-link>
           <router-link to="/visualLayout" tag="button">可视化布局</router-link>
           <router-link to="/visualLayout2" tag="button">可视化布局2</router-link>
-          <router-link to="/eventDelegation" tag="button">事件委托</router-link>
+          <router-link to="/eventDelegation" tag="button">虚拟列表1</router-link>
+          <router-link to="/virtualList2" tag="button">虚拟列表2</router-link>
+
           <!-- <br />
           <a href="#">登录</a>
           <a href="#">注册</a>
@@ -78,7 +80,7 @@ export default {
       num2: 0,
       index: 0,
       //compComm
-      list:["a","b","c"],
+      list: ["a", "b", "c"],
     };
   },
   mounted() {
@@ -91,7 +93,7 @@ export default {
       //
       turf.point([118.32304, 32.280778]),
       turf.point([118.319923, 32.274207]),
-      turf.point([118.316527, 32.260624])
+      turf.point([118.316527, 32.260624]),
       // turf.point([118.324271, 32.282284]),
       // turf.point([118.324271, 32.282284]),
       // turf.point([118.324271, 32.282284]),
@@ -102,11 +104,11 @@ export default {
     // this.get();
   },
   created() {
-    // console.log(window.atob(this.$route.query.id));    
+    // console.log(window.atob(this.$route.query.id));
   },
   methods: {
     test1: debounce(
-      vm => {
+      (vm) => {
         vm.num1++;
       },
       2000,
@@ -122,7 +124,7 @@ export default {
     //   this.num++;
     // }, 1000)
     test2: throttle(
-      vm => {
+      (vm) => {
         vm.num2++;
       },
       1000,
@@ -134,8 +136,8 @@ export default {
       }, 1000);
       //定时器返回值或许是随机的
       console.log(this.settime);
-    }
-  }
+    },
+  },
 };
 </script>
 
