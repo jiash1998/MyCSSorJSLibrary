@@ -1,11 +1,6 @@
 <template>
   <div id="virtualList2">
-    <div id="d1">1</div>
-    <div id="d2">2</div>
-    <div id="d3">3</div>
-    <div id="d4">4</div>
-    <div id="d5">5</div>
-    <div id="d6">6</div>
+    <div id="d1" v-for="(item,index) in divLen" :key="index">{{item}}</div>
   </div>
 </template>
 
@@ -14,40 +9,25 @@ export default {
   name: "virtualList2",
   data() {
     return {
-      scrollT: 0,
-      clientH: 0,
+      divLen: ["a1", "a2", "a3", "a4", "a5", "a6"],
     };
   },
   mounted() {
-    // this.scrollT = document.documentElement.scrollTop;
-    this.clientH = document.documentElement.clientHeight;
-    // console.log( document.documentElement);
-    // console.log(window.navigator.userAgent);
+    // console.log(
+    //   "clientHeight:",
+    //   window.innerHeight,
+    //   document.body.clientHeight,
+    //   document.documentElement.clientHeight,
+    //   "scrollTop:",
+    //   document.body.scrollTop,
+    //   document.documentElement.scrollTop,
+    //   "scrollHeight:",
+    //   document.body.scrollHeight,
+    //   document.documentElement.scrollHeight,
+    //   document.body.offsetHeight,
+    //   document.documentElement.offsetHeight
+    // );
     window.addEventListener("scroll", () => {
-      console.log(
-        document.documentElement.clientHeight,
-        document.body.scrollHeight,
-        document.documentElement.scrollTop,
-        document.documentElement.offsetHeight
-      );
-      //   if (
-      //     document.documentElement.clientHeight +
-      //       Math.round(document.documentElement.scrollTop) ==
-      //       document.documentElement.offsetHeight ||
-      //     document.documentElement.clientHeight +
-      //       Math.round(document.documentElement.scrollTop) +
-      //       1 ==
-      //       document.documentElement.offsetHeight
-      //   ) {
-      //     console.log("true");
-      //   }
-      //   if (
-      //     Math.round(document.documentElement.scrollTop) +
-      //       document.documentElement.clientHeight ===
-      //     document.body.scrollHeight
-      //   ) {
-      //     alert("到底了");
-      //   }
       var a =
         window.innerHeight ||
         document.documentElement.clientHeight ||
@@ -60,23 +40,36 @@ export default {
         document.documentElement.scrollTop == 0
           ? document.body.scrollHeight
           : document.documentElement.scrollHeight;
-      //alert(document.body.clientHeight);
-      //alert(document.documentElement.clientHeight);
-      // alert(document.documentElement.scrollTop);
-      //alert(document.documentElement.scrollHeight);
-      //alert(document.body.scrollHeight);
       if (
         document.body.scrollTop == 0 &&
         document.documentElement.scrollTop == 0
       ) {
-        alert("到达顶端");
+        console.log("top");
       }
       if (a + Math.floor(b) == c || a + Math.ceil(b) == c) {
-        alert("到达底部");
+        console.log("end");
+        for (let i = 0; i < 10; i++) {
+          this.divLen.push(i);
+        }
       }
     });
   },
   methods: {
+    //添加新节点,不行这种方法
+    createNewEle() {
+      let node = document.createElement("div");
+      let father = document.querySelector("#virtualList2");
+
+      // node.style.cssText += ` width: 90%;
+      //   height: 150px;
+      //   border-radius: 8px;
+      //   background-color: pink;
+      //   margin: 0px auto;
+      //   transition: 2s;`;
+      node.setAttribute("class", "addNew");
+
+      father.appendChild(node);
+    },
     //节流
     throttle(fn, wait, mustRun) {
       let timeout,
@@ -96,12 +89,6 @@ export default {
           timeout = setTimeout(fn, wait);
         }
       };
-    },
-    //兼容事件
-    compatiableEvent(element, type, handler) {
-      if (element.addEventListener) {
-      } else if (element.attachEvent) {
-      }
     },
     //事件委托
     eventEntrust() {},
@@ -126,7 +113,16 @@ export default {
     height: 150px;
     border-radius: 8px;
     background-color: pink;
-    margin: 5px auto;
+    margin: 0px auto;
+    transition: 2s;
+  }
+
+  .addNew {
+    width: 90%;
+    height: 150px;
+    border-radius: 8px;
+    background-color: pink;
+    margin: 0px auto;
     transition: 2s;
   }
 }

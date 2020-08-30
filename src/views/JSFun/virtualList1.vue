@@ -39,15 +39,6 @@ export default {
 
       this.ob.observe(item);
     });
-    // this.init();
-    // window.addEventListener(
-    //   "scroll",
-    //   this.throttle(this.windowEvent, 500, 1000)
-    // );
-    // this.windowEvent();
-    // throttle(this.windowEvent, 500, 1000);
-    // this.H5NewApi(this.$qs("#d1"));
-    // console.log(div1,this.$qs("#d1"));
   },
   destroyed() {
     console.log("byb11");
@@ -98,26 +89,20 @@ export default {
     },
     //H5 新api 监听交叉区
     H5NewApi(name) {
-      this.ob = new IntersectionObserver(this.callback, {
-        threshold: [0, 0.25, 0.5, 0.75, 1],
-      });
+      this.ob = new IntersectionObserver(
+        () => {
+          // console.log(entries[0].intersectionRatio);
+          console.log(entries[0].target);
+        },
+        {
+          threshold: [0, 0.25, 0.5, 0.75, 1],
+        }
+      );
 
       this.ob.observe(name);
     },
     //intersectionObserver callback
-    callback(entries) {
-      // console.log(entries[0].intersectionRatio);
-      console.log(entries[0].target);
-      // if (
-      //   entries[0].intersectionRatio > 0.25 &&
-      //   entries[0].intersectionRatio < 0.5
-      // ) {
-      //   console.log(entries[0].target);
-      //   entries[0].target.innerHTML += "enter";
-      //   console.log("start");
-      //   this.ob.unobserve();
-      // }
-    },
+    callback(entries) {},
     //创建节点
     addElement(i) {
       let div0 = document.createElement("div");
