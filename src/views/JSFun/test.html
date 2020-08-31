@@ -9,7 +9,7 @@
         #outer {
             height: 200px;
             width: 200px;
-            background-color: red;
+            /* background-color: red; */
         }
 
         #inner {
@@ -22,30 +22,47 @@
 
 <body>
     <div id="outer">
-        <div id="inner"></div>
+        <!-- <div id="inner"></div> -->
+        <div id="myDiv" style="width: 0;background-color:#27ae60;height: 20px;line-height: 20px;">0%</div>
+        <button id="btn">run</button>
     </div>
 </body>
 <script>
-    const inner = document.getElementById("inner");
-    const outer = document.getElementById("outer");
+    var timer;
+        btn.onclick = function () {
+            myDiv.style.width = '0';
+            cancelAnimationFrame(timer);
+            timer = requestAnimationFrame(function fn() {
+                if (parseInt(myDiv.style.width) < 500) {
+                    console.log(this);
+                    myDiv.style.width = parseInt(myDiv.style.width) + 5 + 'px';
+                    myDiv.innerHTML = parseInt(myDiv.style.width) / 5 + '%';
+                    timer = requestAnimationFrame(fn);
+                } else {
+                    cancelAnimationFrame(timer);
+                }
+            });
+        }
+    // const inner = document.getElementById("inner");
+    // const outer = document.getElementById("outer");
 
-    // 监听 outer 的属性变化。
-    new MutationObserver(() => console.log("mutate outer"))
-        .observe(outer, { attributes: true });
+    // // 监听 outer 的属性变化。
+    // new MutationObserver(() => console.log("mutate outer"))
+    //     .observe(outer, { attributes: true });
 
-    // 处理 click 事件。
-    function onClick() {
-        console.log("click");
-        setTimeout(() => console.log("timeout"), 0);
-        Promise.resolve().then(() => console.log("promise"));
-        outer.setAttribute("data-mutation", Math.random());
-    }
+    // // 处理 click 事件。
+    // function onClick() {
+    //     console.log("click");
+    //     setTimeout(() => console.log("timeout"), 0);
+    //     Promise.resolve().then(() => console.log("promise"));
+    //     outer.setAttribute("data-mutation", Math.random());
+    // }
 
-    // 监听 click 事件。
-    inner.addEventListener("click", onClick);
-    outer.addEventListener("click", onClick);
+    // // 监听 click 事件。
+    // inner.addEventListener("click", onClick);
+    // outer.addEventListener("click", onClick);
 
-    inner.click();
+    // inner.click();
 </script>
 
 </html>

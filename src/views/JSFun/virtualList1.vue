@@ -90,7 +90,7 @@ export default {
     //H5 新api 监听交叉区
     H5NewApi(name) {
       this.ob = new IntersectionObserver(
-        () => {
+        (entries) => {
           // console.log(entries[0].intersectionRatio);
           console.log(entries[0].target);
         },
@@ -101,7 +101,7 @@ export default {
 
       this.ob.observe(name);
     },
-  }
+  },
 };
 </script>
 
