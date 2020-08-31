@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #virtualList2 {
+            width: 100%;
+        }
+
+        #d1,
+        #d2,
+        #d3,
+        #d4,
+        #d5,
+        #d6,
+        #d7,
+        #d8,
+        #d9,
+        #d10 {
+            width: 90%;
+            height: 150px;
+            border-radius: 8px;
+            background-color: pink;
+            margin: 5px auto;
+            transition: 2s;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="virtualList2">
+        <div id="d1"></div>
+        <div id="d1"></div>
+        <div id="d1"></div>
+        <div id="d1"></div>
+        <div id="d1"></div>
+        <div id="d1"></div>
+    </div>
+    <script>
+        
+        console.log(
+            "clientHeight:",
+            window.innerHeight,
+            document.body.clientHeight,
+            document.documentElement.clientHeight,
+            "scrollTop:",
+            document.body.scrollTop,
+            document.documentElement.scrollTop,
+            "scrollHeight:",
+            document.body.scrollHeight,
+            document.documentElement.scrollHeight,
+            document.body.offsetHeight,
+            document.documentElement.offsetHeight
+        );
+        // window.addEventListener("scroll", function () {
+        //     var a =
+        //         window.innerHeight ||
+        //         document.documentElement.clientHeight ||
+        //         document.body.clientHeight;
+        //     var b =
+        //         document.documentElement.scrollTop == 0
+        //             ? document.body.scrollTop
+        //             : document.documentElement.scrollTop;
+        //     var c =
+        //         document.documentElement.scrollTop == 0
+        //             ? document.body.scrollHeight
+        //             : document.documentElement.scrollHeight;
+        //     if (
+        //         document.body.scrollTop == 0 &&
+        //         document.documentElement.scrollTop == 0
+        //     ) {
+        //         alert("到达顶端");
+        //     }
+        //     if (a + Math.floor(b) == c || a + Math.ceil(b) == c) {
+        //         alert("到达底部");
+        //     }
+
+        // })
+
+        // var ticking = false; // rAF 触发锁
+
+        // function onScroll() {
+        //     if (!ticking) {
+        //         requestAnimationFrame(realFunc);
+        //         ticking = true;
+        //     }
+        // }
+
+        // function realFunc() {
+        //     // do something...
+        //     console.log("Success");
+        //     ticking = false;
+        // }
+        // // 事件监听
+        // window.addEventListener('mousemove', onScroll, false);
+        // window.addEventListener("mousemove", () => {
+        //     console.log("success1");
+        // }, false)
+    </script>
+</body>
+
+</html>

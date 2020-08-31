@@ -43,6 +43,8 @@ import es6_Proxy from "../views/JSFun/es6_Proxy";
 // import eventDelegation from "../views/JSFun/eventDelegation";
 import virtualList1 from "../views/JSFun/virtualList1";
 import virtualList2 from "../views/JSFun/virtualList2";
+import animationTest from "../views/JSFun/animationTest";
+
 
 //
 import visualLayout from "../views/GraduationDesign/visualLayout";
@@ -285,6 +287,11 @@ const routes = [
     path: "/virtualList2",
     name: "virtualList2",
     component: virtualList2,
+  },
+  {
+    path: "/animationTest",
+    name: "animationTest",
+    component: animationTest,
   },
 ];
 

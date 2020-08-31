@@ -101,29 +101,7 @@ export default {
 
       this.ob.observe(name);
     },
-    //intersectionObserver callback
-    callback(entries) {},
-    //创建节点
-    addElement(i) {
-      let div0 = document.createElement("div");
-      let father = this.$qs("#eventDelegation");
-
-      div0.id = "d" + i;
-      div0.innerHTML = i;
-      div0.style.cssText = `width: 90%;
-        height: 200px;
-        border-radius: 8px;
-        background-color: pink;
-        margin: 10px auto;
-        transition: 4s;`;
-      father.appendChild(div0);
-    },
-    init() {
-      for (let i = 1, len = this.list.length; i <= len; i++) {
-        this.addElement(i);
-      }
-    },
-  },
+  }
 };
 </script>
 

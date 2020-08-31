@@ -28,7 +28,7 @@
           <router-link to="/visualLayout2" tag="button">可视化布局2</router-link>
           <router-link to="/eventDelegation" tag="button">虚拟列表1</router-link>
           <router-link to="/virtualList2" tag="button">虚拟列表2</router-link>
-
+          <router-link to="/animationTest" tag="button">动画制作优化</router-link>
           <!-- <br />
           <a href="#">登录</a>
           <a href="#">注册</a>
