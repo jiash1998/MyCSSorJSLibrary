@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1,
+        #div0 {
+            height: 300px;
+            width: 400px;
+            margin: 10px;
+            display: flex;
+            background-color: blueviolet;
+        }
+
+        #div2 {
+            height: 100px;
+            width: 200px;
+            margin: 10px;
+            background-color: gray;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="div0">
+        <p>div0</p>
+        <img src="../../assets/img/facebook.png" id="img1" />
+    </div>
+    <div id="div1">
+        <p>div1</p>
+    </div>
+    <div id="div2" draggable="true">
+        <p>div2</p>
+    </div>
+    <script>
+        let dragNode = {};
+        let img1 = document.querySelector("#img1");
+        let div0 = document.querySelector("#div0");
+        let div1 = document.querySelector("#div1");
+        let div2 = document.querySelector("#div2");
+
+        img1.addEventListener("dragstart", () => {
+            console.log("dragstart");
+            dragNode = img1;
+        }, false)
+
+        div2.addEventListener("dragstart", () => {
+            console.log("dragstart");
+            dragNode = div2;
+            event.dataTransfer.setData("text/plain", event.target);
+        }, false)
+
+        img1.addEventListener("drag", () => {
+            console.log("drag");
+        }, false)
+
+        img1.addEventListener("dragend", () => {
+            console.log("dragend");
+        }, false)
+
+        div1.addEventListener("dragenter", () => {
+            console.log("element enter");
+            div1.style.background = "purple";
+        }, false)
+
+        div1.addEventListener("dragover", () => {
+            console.log("element over");
+            //允许放下
+            event.preventDefault();
+        }, false)
+
+        div1.addEventListener("dragleave", () => {
+            console.log("element leave");
+            div1.style.background = "blueviolet";
+        }, false)
+
+        div1.addEventListener("drop", () => {
+            event.preventDefault();
+            console.log("element drop", dragNode.parentNode);
+            if (dragNode.parentNode) {
+                dragNode.parentNode.removeChild(dragNode);
+            }
+            let a = event.dataTransfer.getData("text/plain");
+            console.log(a);
+            event.target.appendChild(dragNode);
+            div1.style.background = "blueviolet";
+        }, false)
+    </script>
+</body>
+
+</html>
