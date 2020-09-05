@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../../JsUtil/gocr.js"></script>
+</head>
+
+<body>
+    <!-- <canvas id="test" width="900" height="900"></canvas> -->
+    <img src="../../assets/img/imageRecognition.jpg" id="img1" />
+    <script>
+        var drawing = document.getElementById("test");
+        var img1 = document.getElementById("img1");
+        // let context = drawing.getContext("2d");
+        var string = GOCR(img1);
+        alert(string);
+
+        // if (drawing.getContext) {
+        //     context.fillStyle = "pink";
+        //     context.fillRect(20, 20, 300, 300);
+        // }
+        // 图片增加了canvas操作的复杂度：必须等到图片完全加载后才能对其进行操作。
+        // 浏览器通常会在页面脚本执行的同时异步加载图片。
+        // 如果试图在图片未完全加载之前就将其呈现到canvas上，那么canvas将不会显示任何图片。
+        // 因此，开发人员要特别注意，在呈现之前，应确保图片已经加载完毕。
+        // function loadImg() {
+        //     var beauty = new Image();
+        //     beauty.src = "../../assets/img/imageRecognition.jpg";
+
+        //     beauty.onload = function () {
+        //         context.drawImage(beauty, 0, 0, 400, 400);
+        //     }
+
+        //     var imageData = context.getImageData(0, 0, 5, 5);
+        //     console.log(imageData);
+        // }
+
+
+
+        // window.addEventListener('load', loadImg, false);
+    </script>
+</body>
+
+</html>
