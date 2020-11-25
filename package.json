@@ -13,7 +13,7 @@
     "echarts": "^4.7.0",
     "element-ui": "^2.13.2",
     "file-saver": "^2.0.2",
-    "highlight.js": "^10.1.1",
+    "highlight.js": "^10.1.2",
     "pretty": "^2.0.0",
     "querystring": "^0.2.0",
     "scopedcss": "^0.1.4",
